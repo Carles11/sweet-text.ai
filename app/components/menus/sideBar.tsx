@@ -39,7 +39,7 @@ const Sidebar: React.FC<Props> = ({ items, onShowPopup }) => {
         <i className={`fas fa-${isOpen ? 'times' : 'bars'} text-primary`} />
       </button>
       <aside
-        className={`bg-white min-h-screen min-h-screen flex flex-col border-r border-gray-200 transition-transform duration-300 ease-in-out transform ${
+        className={`bg-white min-h-screen flex flex-col border-r border-gray-200 transition-transform duration-300 ease-in-out transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0 md:static fixed top-0 left-0 h-full md:min-h-0 md:relative md:w-60 overflow-y-hidden`}
       >
@@ -58,8 +58,7 @@ const Sidebar: React.FC<Props> = ({ items, onShowPopup }) => {
               Open Source{' '}
             </h1>
             <h1 className="text-lg font-semibold text-gray-700  text-center">
-              Jasper <i className="fas fa-arrow-right text-primary" />{' '}
-              alternative
+              Jasper <i className="fa-arrow-right text-primary" /> alternative
             </h1>
           </div>
         </div>
