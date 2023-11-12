@@ -5,6 +5,9 @@ import { useRouter, usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Github from './gitHub'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons'
+
 export interface SidebarItem {
   label: string
   url: string
@@ -36,7 +39,10 @@ const Sidebar: React.FC<Props> = ({ items, onShowPopup }) => {
         className="z-50 w-10 h-10 fixed top-4 left-4 z-10 md:hidden bg-white border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary"
         onClick={toggleSidebar}
       >
-        <i className={`fas fa-${isOpen ? 'times' : 'bars'} text-primary`} />
+        <FontAwesomeIcon
+          icon={isOpen ? faTimes : faBars}
+          style={{ fontSize: 30, color: 'orange' }}
+        />
       </button>
       <aside
         className={`bg-white min-h-screen flex flex-col border-r border-gray-200 transition-transform duration-300 ease-in-out transform ${

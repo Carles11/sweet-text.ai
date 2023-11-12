@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 interface GoProPopupProps {
   onClose: () => void
 }
@@ -8,7 +11,10 @@ const GoProPopup: React.FC<GoProPopupProps> = ({ onClose }) => {
     <div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center bg-black bg-opacity-50 z-50">
       <div className="w-11/12 md:w-1/3 p-2 md:p-8 z-10 relative bg-white">
         <div className="flex justify-center items-center mb-2">
-          <i className="fas fa-coffee"></i>
+          <FontAwesomeIcon
+            icon={faCoffee}
+            style={{ fontSize: 30, color: 'orange' }}
+          />
         </div>
         <h1 className="text-black text-3xl md:text-4xl text-center font-bold mb-0">
           There is no Pro Plan

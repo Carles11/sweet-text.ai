@@ -8,7 +8,7 @@ const TemplatePage = () => {
   const router = useRouter()
   const { id } = router.query
   const [template, setTemplate] = useState(null)
-
+  console.log('TETETETETETETETETETETETETETETETE')
   useEffect(() => {
     if (id) {
       const selectedTemplate = TEMPLATES.find((t) => t.id === id)

@@ -1,4 +1,15 @@
-import { faFileLines } from '@fortawesome/free-solid-svg-icons'
+import {
+  faFileLines,
+  faFire,
+  faLightbulb,
+  faTerminal,
+  faBookOpen,
+  faEnvelope,
+  faBuilding,
+  faPencilAlt,
+  faLink,
+  faShare,
+} from '@fortawesome/free-solid-svg-icons'
 
 export type TemplateInput = {
   id: string
@@ -55,7 +66,7 @@ export const TEMPLATES: Template[] = [
       "Create key feature and benefit bullet points for Amazon listings under the 'about this item' section.",
     command:
       "Create key feature and benefit bullet points for Amazon listings under the 'about this item' section.",
-    icon: `<i class="fab fa-aws text-primary"></i>`,
+    icon: faShare,
     categories: ['ecommerce', 'ads'],
     inputs: [
       {
@@ -93,7 +104,7 @@ export const TEMPLATES: Template[] = [
     description:
       'Wrap up your blog posts with an engaging conclusion paragraph.',
     command: 'Wrap up your blog posts with an engaging conclusion paragraph.',
-    icon: `<i class="fas fa-fire text-primary"></i>`,
+    icon: faFire,
     categories: ['blog', 'seo'],
     inputs: [
       {
@@ -123,7 +134,7 @@ export const TEMPLATES: Template[] = [
     title: 'Blog Post Intro Paragraph',
     description: 'Write an engaging opening paragraph for your blog post.',
     command: 'Write an engaging opening paragraph for your blog post.',
-    icon: `<i class="fas fa-fire text-primary"></i>`,
+    icon: faFire,
     categories: ['blog', 'seo'],
     inputs: [
       {
@@ -153,7 +164,7 @@ export const TEMPLATES: Template[] = [
     description:
       "Create lists and outlines for articles, for example for 'How to' style blog posts and articles.",
     command: 'Create lists and outlines for an article: ',
-    icon: `<i class="fas fa-fire text-primary"></i>`,
+    icon: faFire,
     categories: ['blog', 'seo'],
     inputs: [
       {
@@ -178,7 +189,7 @@ export const TEMPLATES: Template[] = [
       'Generate new blog post topics that will engage readers and rank well on Google.',
     command:
       'Generate new blog post topics that will engage readers and rank well on Google.',
-    icon: `<i class="fas fa-fire text-primary"></i>`,
+    icon: faFire,
     categories: ['blog', 'seo', 'google'],
     inputs: [
       {
@@ -214,7 +225,7 @@ export const TEMPLATES: Template[] = [
     title: 'Business or Product Name',
     description: 'Generate a winning name for your business or product.',
     command: 'Generate a winning name for your business or product.',
-    icon: "<i class='fas fa-lightbulb text-primary' ></i>",
+    icon: faLightbulb,
     categories: ['marketing'],
     inputs: [
       {
@@ -237,7 +248,7 @@ export const TEMPLATES: Template[] = [
     title: 'Commands',
     description: 'Tell Jema.ai exactly what to write with a command.',
     command: 'Please do the following: ',
-    icon: "<i class='fas fa-terminal  text-primary'></i>",
+    icon: faTerminal,
     categories: ['all', 'google'],
     inputs: [
       {
@@ -261,7 +272,7 @@ export const TEMPLATES: Template[] = [
     title: 'Creative Story',
     description: 'Write creative stories to engage readers.',
     command: 'Write a creative story ',
-    icon: "<i class='fas fa-book-open text-primary'></i>",
+    icon: faBookOpen,
     categories: ['blog', 'website'],
     inputs: [
       {
@@ -284,7 +295,7 @@ export const TEMPLATES: Template[] = [
     title: 'Email Subject Lines',
     description: 'Get your emails opened with irresistible subject lines.',
     command: 'Write Email Subject Lines. use the following : ',
-    icon: "<i class='fas fa-envelope text-primary'></i>",
+    icon: faEnvelope,
     categories: ['email', 'marketing'],
     inputs: [
       {
@@ -313,7 +324,7 @@ export const TEMPLATES: Template[] = [
     title: 'Company Bio',
     description: "Share your company's story with a compelling bio.",
     command: 'Create a compelling bio for the following company. ',
-    icon: "<i class='fas fa-building text-primary'></i>",
+    icon: faBuilding,
     categories: ['marketing', 'website'],
     inputs: [
       {
@@ -344,7 +355,7 @@ export const TEMPLATES: Template[] = [
       'Enhance a piece of content by rewriting it to be more engaging, creative, and captivating.',
     command:
       'Rewrite the following content to be more engaging, creative, and captivating: ',
-    icon: "<i class='fas fa-pencil-alt text-primary'></i>",
+    icon: faPencilAlt,
     categories: ['blog', 'seo', 'email'],
     inputs: [
       {
@@ -368,7 +379,7 @@ export const TEMPLATES: Template[] = [
     description:
       'Craft compelling primary text for Facebook ads that attract users.',
     command: 'Create compelling primary text for Facebook ad.',
-    icon: "<i class='fab fa-facebook text-primary'></i>",
+    icon: faShare,
     categories: ['ads', 'social_media'],
     inputs: [
       {
@@ -399,7 +410,7 @@ export const TEMPLATES: Template[] = [
       'Create a clear and concise job description to attract suitable candidates.',
     command:
       'Write a compelling and a clear and concise job description for the following company:',
-    icon: "<i class='fas fab fa-linkedin text-primary'></i>",
+    icon: faLink,
     categories: ['linkedin', 'social_media'],
     inputs: [
       {
@@ -469,7 +480,7 @@ export const TEMPLATES: Template[] = [
     description:
       'Get inspired with LinkedIn topic ideas to share with your network.',
     command: 'Suggest LinkedIn topic ideas to share with my network.',
-    icon: "<i class='fas fab fa-linkedin text-primary'></i>",
+    icon: faLink,
     categories: ['linkedin', 'social_media'],
     inputs: [
       {

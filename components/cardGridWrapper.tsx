@@ -4,6 +4,9 @@ import { Fragment, useState } from 'react'
 import Card, { CardProps } from './card'
 import CategoriesList from './categoriesList'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRobot } from '@fortawesome/free-solid-svg-icons'
+
 interface Props {
   cards: CardProps[]
 }
@@ -33,7 +36,10 @@ const CardGrid: React.FC<Props> = ({ cards }) => {
             className="relative p-6 h-full rounded-2xl shadow-sm bg-white"
           >
             <div className="flex items-center justify-center w-16 h-16 text-3xl rounded-full mb-4 bg-white text-indigo-500">
-              <i className="fas fa-robot"></i>
+              <FontAwesomeIcon
+                icon={faRobot}
+                style={{ fontSize: 30, color: 'orange' }}
+              />
             </div>
             <h3 className="mb-2 text-lg font-bold text-white">
               Want to integrate AI into your business?
