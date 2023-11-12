@@ -1,9 +1,8 @@
 // @ts-nocheck
 
 import { ScriptProps } from 'next/script'
-import { Fragment } from 'react'
-import { SIDEBAR_ITEMS } from './constants'
-import Sidebar from './components/menus/sideBar'
+import { SIDEBAR_ITEMS } from 'constants/menuItems'
+import Sidebar from 'components/menus/sideBar'
 
 import './globals.css'
 

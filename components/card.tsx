@@ -1,8 +1,8 @@
-import React from 'react'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export interface CardProps {
-  icon: string
+  icon: any
   title: string
   description: string
   categories: string[]
@@ -37,7 +37,10 @@ const Card: React.FC<CardProps> = ({ icon, title, description, id }) => {
           </button>
         </div>
         <div className="flex items-center justify-center w-16 h-16 text-2xl rounded-full text-gray-600 mb-6 bg-gray-100/75">
-          <span dangerouslySetInnerHTML={{ __html: icon }} />
+          <FontAwesomeIcon
+            icon={icon}
+            style={{ fontSize: 30, color: 'orange' }}
+          />
         </div>
         <h3 className="mb-2 text-lg font-semibold text-gray-700">{title}</h3>
         <p className="text-gray-500 flex-1">{description}</p>

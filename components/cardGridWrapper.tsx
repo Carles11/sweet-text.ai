@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 import Card, { CardProps } from './card'
 import CategoriesList from './categoriesList'
 

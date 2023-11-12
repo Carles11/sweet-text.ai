@@ -1,3 +1,5 @@
+import { faFileLines } from '@fortawesome/free-solid-svg-icons'
+
 export type TemplateInput = {
   id: string
   label: string
@@ -19,10 +21,10 @@ export type Template = {
 export const TEMPLATES: Template[] = [
   {
     id: 'a6dc-0f21-c102-6c22',
-    title: 'Amazon Product Description (paragraph)',
+    title: 'Long text description (paragraphs)',
     description: 'Create compelling product descriptions for Amazon listings.',
     command: 'Create compelling product descriptions for Amazon listings.',
-    icon: `<i class="fab fa-aws text-primary"></i>`,
+    icon: faFileLines,
     categories: ['ecommerce', 'ads'],
     inputs: [
       {
