@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+'use client'
+
+import { useState } from 'react'
 import TemplateHeader from './templateHeader'
 import { Template } from 'constants/templates'
 
@@ -113,7 +115,7 @@ const InputComponent: React.FC<InputComponentProps> = ({
         <button
           onClick={async () => {
             setIsLoading(true)
-            await generateOutput(template, inputsData)
+            generateOutput(template, inputsData)
             setIsLoading(false)
           }}
           className={`px-4 py-2 text-white bg-gradient-to-r from-purple-400 to-blue-400 rounded-md hover:from-purple-300 hover:to-blue-300 relative ${

@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+'use client'
+
+import { useState } from 'react'
 import InputComponent from './inputComponent'
 import OutputComponent from './outputComponent'
 import { Template } from '../constants/templates'
@@ -14,7 +16,7 @@ const InputOutputComponent = ({ template }) => {
     template: Template,
     inputsData: { [key: string]: string }
   ) => {
-    const result: any = await fetch('/api/chatgpt', {
+    const result: any = await fetch('/routes/chat-gpt', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

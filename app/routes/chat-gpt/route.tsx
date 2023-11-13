@@ -1,4 +1,3 @@
-// pages/api/chatgpt.ts
 import { NextApiRequest, NextApiResponse } from 'next'
 import { Configuration, OpenAIApi } from 'openai'
 import { Template, TemplateInput } from 'constants/templates'
@@ -45,7 +44,7 @@ export default async function handler(
         model: 'gpt-3.5-turbo',
         // @ts-ignore
         messages: messages,
-        temperature: 1,
+        temperature: 0.5,
       })
 
       const reply = response?.data?.choices[0].message.content
