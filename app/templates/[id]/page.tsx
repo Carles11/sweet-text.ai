@@ -1,16 +1,16 @@
-import { useRouter } from 'next/router'
+'use client'
+
 import { useEffect, useState } from 'react'
-import Layout from '../layout'
+// import Layout from '../layout'
 import { TEMPLATES } from 'constants/templates'
 import InputOutputComponent from 'components/inputOutputComponent'
 
-const TemplatePage = () => {
-  const router = useRouter()
-  const { id } = router.query
+const TemplatePage = ({ params }: { params: { id: string } }) => {
+  const id = params.id
+
   const [template, setTemplate] = useState(null)
-  console.log('TETETETETETETETETETETETETETETETE')
+  console.log('id_TETETETETETETETETETETETETETETETE', params)
   console.log({ id })
-  console.log({ template })
   useEffect(() => {
     if (id) {
       const selectedTemplate = TEMPLATES.find((t) => t.id === id)
@@ -19,14 +19,14 @@ const TemplatePage = () => {
     }
   }, [id])
 
+  console.log({ template })
   if (!template) {
     return <div>Loading...</div>
   }
 
   return (
     // @ts-ignore  ="gogogo">
-      <InputOutputComponent template={template} />
-    </Layout>
+    <InputOutputComponent template={template} />
   )
 }
 

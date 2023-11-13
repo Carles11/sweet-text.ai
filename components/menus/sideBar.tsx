@@ -64,7 +64,7 @@ const Sidebar: React.FC<Props> = ({ items, onShowPopup }) => {
               Open Source{' '}
             </h1>
             <h1 className="text-lg font-semibold text-gray-700  text-center">
-              Jasper <i className="fa-arrow-right text-primary" /> alternative
+              AI text generator
             </h1>
           </div>
         </div>
