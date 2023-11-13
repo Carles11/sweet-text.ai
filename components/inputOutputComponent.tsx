@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import InputComponent from './inputComponent'
 import OutputComponent from './outputComponent'
-import { Template } from '../constants/templates'
+import { Template } from 'constants/templates'
 
 // @ts-ignore
 const InputOutputComponent = ({ template }) => {
@@ -16,7 +16,8 @@ const InputOutputComponent = ({ template }) => {
     template: Template,
     inputsData: { [key: string]: string }
   ) => {
-    const result: any = await fetch('/routes/chat-gpt', {
+    console.log({ template, inputsData })
+    const result: any = await fetch('/api/chat-gpt', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -27,8 +28,11 @@ const InputOutputComponent = ({ template }) => {
       }),
     })
     const { reply } = await result.json()
+    console.log({ reply })
     setOutput(reply || '')
   }
+
+  console.log({ output })
   return (
     <div className="flex flex-col lg:flex-row w-full h-full">
       <InputComponent

@@ -94,7 +94,11 @@ const InputComponent: React.FC<InputComponentProps> = ({
             type?: 'text' | 'textarea' | 'select'
             options?: string[] | undefined
           }) => (
-            <label htmlFor={input.id} className="block mt-4" key={input.id}>
+            <label
+              htmlFor={input.id}
+              className="block mt-4 text-gray-700"
+              key={input.id}
+            >
               {input.label}
               {renderInputField(
                 input,
