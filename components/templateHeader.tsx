@@ -3,8 +3,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface TemplateHeaderProps {
-  title: any
-  icon: string
+  title: string
+  icon: any
   description: string
 }
 
