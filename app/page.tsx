@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
   return (
     <div>
       <h1 className="text-4xl font-bold mt-10 ml-10">
-        Welcome to <span className="text-blue-600">textiest.ai</span>
+        Welcome to <span className="text-blue-600">sweet-text.ai</span>
       </h1>
       <h2 className="text-2xl font-light mt-5 ml-10">
         Create amazing{' '}

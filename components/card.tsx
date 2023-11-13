@@ -39,7 +39,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, id }) => {
         <div className="flex items-center justify-center w-16 h-16 text-2xl rounded-full text-gray-600 mb-6 bg-gray-100/75">
           <FontAwesomeIcon
             icon={icon}
-            style={{ fontSize: 30, color: 'orange' }}
+            style={{ fontSize: 30, color: 'silver' }}
           />
         </div>
         <h3 className="mb-2 text-lg font-semibold text-gray-700">{title}</h3>

@@ -1,9 +1,9 @@
 // components/TemplateHeader.tsx
 
-import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface TemplateHeaderProps {
-  title: string
+  title: any
   icon: string
   description: string
 }
@@ -18,7 +18,10 @@ const TemplateHeader: React.FC<TemplateHeaderProps> = ({
       <div className="mr-6">
         <div className="flex items-center justify-center w-10 h-10 text-gray-500">
           <div className="flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-xl ring-2 ring-offset-2 ring-gray-100 group-hover:ring-gray-200 group-focus:ring-gray-300 group-hover:bg-white">
-            <span dangerouslySetInnerHTML={{ __html: icon }} />
+            <FontAwesomeIcon
+              icon={icon}
+              style={{ fontSize: 30, color: 'silver' }}
+            />
           </div>
         </div>
       </div>

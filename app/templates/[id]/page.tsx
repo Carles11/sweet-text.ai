@@ -9,8 +9,7 @@ const TemplatePage = ({ params }: { params: { id: string } }) => {
   const id = params.id
 
   const [template, setTemplate] = useState(null)
-  console.log('id_TETETETETETETETETETETETETETETETE', params)
-  console.log({ id })
+
   useEffect(() => {
     if (id) {
       const selectedTemplate = TEMPLATES.find((t) => t.id === id)
@@ -19,7 +18,6 @@ const TemplatePage = ({ params }: { params: { id: string } }) => {
     }
   }, [id])
 
-  console.log({ template })
   if (!template) {
     return <div>Loading...</div>
   }

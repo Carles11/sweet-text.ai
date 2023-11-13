@@ -246,7 +246,7 @@ export const TEMPLATES: Template[] = [
   {
     id: 'ab91-6218-4ed4-4374',
     title: 'Commands',
-    description: 'Tell Jema.ai exactly what to write with a command.',
+    description: 'Tell sweetText.ai exactly what to write with a command.',
     command: 'Please do the following: ',
     icon: faTerminal,
     categories: ['all', 'google'],

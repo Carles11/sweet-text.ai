@@ -13,7 +13,7 @@ const GoProPopup: React.FC<GoProPopupProps> = ({ onClose }) => {
         <div className="flex justify-center items-center mb-2">
           <FontAwesomeIcon
             icon={faCoffee}
-            style={{ fontSize: 30, color: 'orange' }}
+            style={{ fontSize: 30, color: 'silver' }}
           />
         </div>
         <h1 className="text-black text-3xl md:text-4xl text-center font-bold mb-0">
@@ -22,8 +22,8 @@ const GoProPopup: React.FC<GoProPopupProps> = ({ onClose }) => {
         <div className="w-5/6 md:w-3/4 mx-auto my-4 text-justify">
           <p className="mb-2">
             {' '}
-            If you're a fan of Jema.ai, feel free to show your support by buying
-            me a coffee.{' '}
+            If you're a fan of sweetText.ai, feel free to show your support by
+            buying me a coffee.{' '}
           </p>
           <p>
             {' '}

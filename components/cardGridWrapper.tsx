@@ -38,7 +38,7 @@ const CardGrid: React.FC<Props> = ({ cards }) => {
             <div className="flex items-center justify-center w-16 h-16 text-3xl rounded-full mb-4 bg-white text-indigo-500">
               <FontAwesomeIcon
                 icon={faRobot}
-                style={{ fontSize: 30, color: 'orange' }}
+                style={{ fontSize: 30, color: 'silver' }}
               />
             </div>
             <h3 className="mb-2 text-lg font-bold text-white">
