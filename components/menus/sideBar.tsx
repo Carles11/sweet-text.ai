@@ -55,7 +55,7 @@ const Sidebar: React.FC<Props> = ({ items, onShowPopup }) => {
         >
           <div className="flex flex-col">
             <Image
-              src={'/images/Jemaai-logo.png'}
+              src={'/images/sweet-text-logo.png'}
               alt="Jema.ai"
               width="250"
               height="100"

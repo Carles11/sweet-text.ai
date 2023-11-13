@@ -6,7 +6,7 @@ import Sidebar from 'components/menus/sideBar'
 
 import './globals.css'
 
-const Layout: React.FC<ScriptProps> = ({ children, title }) => {
+const RootLayout: React.FC<ScriptProps> = ({ children, title }) => {
   return (
     <html>
       <body>
@@ -31,4 +31,4 @@ const Layout: React.FC<ScriptProps> = ({ children, title }) => {
   )
 }
 
-export default Layout
+export default RootLayout
