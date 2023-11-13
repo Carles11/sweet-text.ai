@@ -1,15 +1,15 @@
 // @ts-nocheck
+'use client'
 
 import { ScriptProps } from 'next/script'
 import { SIDEBAR_ITEMS } from 'constants/menuItems'
 import Sidebar from 'components/menus/sideBar'
-import { Head, Html } from 'next/document'
-
+import Head from 'next/head'
 import './globals.css'
 
 const RootLayout: React.FC<ScriptProps> = ({ children, title }) => {
   return (
-    <Html lang="en">
+    <html lang="en">
       <Head>
         <link rel="icon" href="/images/sweet-text-logo.png" />
         <meta
@@ -69,7 +69,7 @@ const RootLayout: React.FC<ScriptProps> = ({ children, title }) => {
         </div>
       </body>
       {/* <NextScript /> */}
-    </Html>
+    </html>
   )
 }
 
