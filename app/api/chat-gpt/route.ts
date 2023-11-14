@@ -4,7 +4,7 @@ import { Template, TemplateInput } from 'constants/templates'
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
-  organization: process.env.OPENAI_ORGANISATION,
+  // organization: process.env.OPENAI_ORGANISATION,
 })
 
 export type InputsData = {
@@ -51,10 +51,12 @@ export async function POST(request: Request) {
       const response: any = await openai.chat.completions.create({
         model: 'gpt-3.5-turbo',
         // @ts-ignore
-        messages: messageTest,
+        messages: messages,
         temperature: 0.5,
       })
-      const reply = response?.data?.choices[0].message.content
+      const reply = response?.choices[0].message.content
+      console.log({ response, reply })
+
       return NextResponse.json({ reply })
     } catch (error) {
       if (error instanceof OpenAI.APIError) {
