@@ -50,7 +50,8 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
   }
 
   const outputs = splitOutput(generatedOutput)
-
+  console.log('myPouttuoiuutuuus', outputs)
+  const outputsNumber = outputs[0] === '' ? 0 : outputs.length
   return (
     <div className="w-full lg:w-1/2">
       <div className="xl:sticky xl:z-10 top-0 flex items-center px-3 bg-white border-b border-gray-200">
@@ -59,7 +60,7 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
             <span className="relative">
               New outputs{' '}
               <span className="px-2 py-1 ml-2 text-xs rounded-full bg-white">
-                {outputs.length}
+                {outputsNumber}
               </span>
             </span>
           </button>
