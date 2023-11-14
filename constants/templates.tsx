@@ -32,11 +32,11 @@ export type Template = {
 export const TEMPLATES: Template[] = [
   {
     id: 'a6dc-0f21-c102-6c22',
-    title: 'Scientific paper (paragraphs)',
-    description: 'Create a compelling scientific paper.',
-    command: 'Create a compelling scientific paper.',
+    title: 'Paper abstract',
+    description: 'Create a compelling abstract for a scientific paper.',
+    command: 'Create a compelling abstract for a scientific paper.',
     icon: faFileLines,
-    categories: ['ecommerce', 'ads'],
+    categories: ['science'],
     inputs: [
       {
         id: 'paper-title',
@@ -45,46 +45,105 @@ export const TEMPLATES: Template[] = [
           'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
         type: 'text',
       },
-      {
-        id: 'paper-abstract',
-        label: 'Paper abstract',
-        placeholder:
-          'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
-        type: 'text',
-      },
+
       {
         id: 'paper-introduction',
         label: 'Paper introduction',
-        placeholder:
-          'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
+        placeholder: 'Write some words that your introduction will include',
         type: 'text',
       },
       {
         id: 'paper-methods',
         label: 'Paper methods',
-        placeholder:
-          'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
+        placeholder: 'Name some of the methods you used in your investigation',
         type: 'text',
       },
       {
         id: 'paper-results',
         label: 'Paper results',
-        placeholder:
-          'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
+        placeholder: 'Write here the most revealing result of your study',
         type: 'text',
       },
       {
         id: 'paper-conclusion',
         label: 'Paper conclusion',
-        placeholder:
-          'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
+        placeholder: 'Write here some keywords that appear in your conclusion',
         type: 'text',
       },
       {
         id: 'key-features',
         label: 'Key Features',
         placeholder:
-          'Name the features and words that should appear in the paper.',
+          'Name the features and words that should appear in the abstract.',
+        type: 'textarea',
+      },
+      {
+        id: 'tone-of-voice',
+        label: 'Tone of Voice',
+        placeholder:
+          'Select a tone. For example: Friendly and professional, conversational and trustworthy, informative and persuasive or write as a known person such as Carl Sagan',
+        type: 'text',
+      },
+
+      {
+        id: 'paper-paragraphs',
+        label: 'Number of paragraphs',
+        placeholder: 'Select the number of paragraphs you need to have.',
+        type: 'text',
+      },
+      {
+        id: 'paper-words',
+        label: 'Number of words',
+        placeholder: 'How many words should the abstract have in total.',
+        type: 'text',
+      },
+    ],
+  },
+  {
+    id: '3b9e-c357-63fb-f7cb',
+    title: 'Paper introduction',
+    description: 'Create a compelling scientific paper.',
+    command: 'Create a compelling scientific paper.',
+    icon: faFileLines,
+    categories: ['science'],
+    inputs: [
+      {
+        id: 'paper-title',
+        label: 'Paper title',
+        placeholder:
+          'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
+        type: 'text',
+      },
+
+      {
+        id: 'paper-introduction',
+        label: 'Paper introduction',
+        placeholder: 'Write some words that your introduction will include',
+        type: 'text',
+      },
+      {
+        id: 'paper-methods',
+        label: 'Paper methods',
+        placeholder: 'Name some of the methods you used in your investigation',
+        type: 'text',
+      },
+      {
+        id: 'paper-results',
+        label: 'Paper results',
+        placeholder: 'Write here the most revealing result of your study',
+        type: 'text',
+      },
+      {
+        id: 'paper-conclusion',
+        label: 'Paper conclusion',
+        placeholder: 'Write here some keywords that appear in your conclusion',
+        type: 'text',
+      },
+      {
+        id: 'key-features',
+        label: 'Key Features',
+        placeholder:
+          'Name the features and words that should appear in the abstract.',
         type: 'textarea',
       },
       {
@@ -95,47 +154,85 @@ export const TEMPLATES: Template[] = [
         type: 'text',
       },
       {
-        id: 'paragraphs',
+        id: 'paper-paragraphs',
         label: 'Number of paragraphs',
         placeholder: 'Select the number of paragraphs you need to have.',
+        type: 'text',
+      },
+      {
+        id: 'paper-words',
+        label: 'Number of words',
+        placeholder: 'How many words should the abstract have in total.',
         type: 'text',
       },
     ],
   },
   {
-    id: '3b9e-c357-63fb-f7cb',
-    title: 'Amazon Product Features (bullets)',
+    id: '5df5-5b3a-d3a7-1610',
+    title: 'Paper Methods',
     description:
-      "Create key feature and benefit bullet points for Amazon listings under the 'about this item' section.",
+      'Create a list of methods that could be used in a scientific paper.',
     command:
-      "Create key feature and benefit bullet points for Amazon listings under the 'about this item' section.",
-    icon: faShare,
-    categories: ['ecommerce', 'ads'],
+      'Create a list of methods that could be used in a scientific paper.',
+    icon: faFileLines,
+    categories: ['science'],
     inputs: [
       {
-        id: 'product-name',
-        label: 'Product Name',
-        placeholder: 'EcoBoost Portable Solar Charger',
+        id: 'paper-title',
+        label: 'Paper title',
+        placeholder:
+          'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
+        type: 'text',
+      },
+
+      {
+        id: 'paper-introduction',
+        label: 'Paper introduction',
+        placeholder: 'Write some words that your introduction will include',
         type: 'text',
       },
       {
-        id: 'product-info',
-        label: 'Product Info',
+        id: 'paper-methods',
+        label: 'Paper methods',
+        placeholder: 'Name some of the methods you used in your investigation',
+        type: 'text',
+      },
+      {
+        id: 'paper-results',
+        label: 'Paper results',
+        placeholder: 'Write here the most revealing result of your study',
+        type: 'text',
+      },
+      {
+        id: 'paper-conclusion',
+        label: 'Paper conclusion',
+        placeholder: 'Write here some keywords that appear in your conclusion',
+        type: 'text',
+      },
+      {
+        id: 'key-features',
+        label: 'Key Features',
         placeholder:
-          'EcoBoost Portable Solar Charger - Compact, Lightweight, and Waterproof - Perfect for Camping, Hiking, and Emergency Preparedness - Compatible with Smartphones, Tablets, and USB Devices',
+          'Name the features and words that should appear in the abstract.',
         type: 'textarea',
-      },
-      {
-        id: 'product-benefits',
-        label: 'Key Benefits/Features',
-        placeholder:
-          'Lightweight design. Waterproof & Durable. Fast charging. Universal compatibility. Environmentally friendly.',
-        type: 'text',
       },
       {
         id: 'tone-of-voice',
         label: 'Tone of Voice',
-        placeholder: 'Professional. Friendly. Funny.',
+        placeholder:
+          'Select a tone. For example: Friendly and professional, conversational and trustworthy, informative and persuasive or write as a known person such as Carl Sagan',
+        type: 'text',
+      },
+      {
+        id: 'paper-paragraphs',
+        label: 'Number of paragraphs',
+        placeholder: 'Select the number of paragraphs you need to have.',
+        type: 'text',
+      },
+      {
+        id: 'paper-words',
+        label: 'Number of words',
+        placeholder: 'How many words should the abstract have in total.',
         type: 'text',
       },
     ],
@@ -393,7 +490,7 @@ export const TEMPLATES: Template[] = [
   },
   {
     id: 'e7b3-458e-62df-17c8',
-    title: 'Content Improver',
+    title: 'Content creator',
     description:
       'Enhance a piece of content by rewriting it to be more engaging, creative, and captivating.',
     command:

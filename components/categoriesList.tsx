@@ -9,16 +9,10 @@ interface Category {
 
 const categoriesData = [
   { id: 'all', label: 'All' },
-  { id: 'blog', label: 'Blog' },
-  { id: 'linkedin', label: 'LinkedIn' },
   { id: 'email', label: 'Email' },
+  { id: 'science', label: 'Science' },
+  { id: 'products', label: 'Products' },
   { id: 'marketing', label: 'Marketing' },
-  { id: 'ecommerce', label: 'Ecommerce' },
-  { id: 'website', label: 'Website' },
-  { id: 'ads', label: 'Ads' },
-  { id: 'google', label: 'Google' },
-  { id: 'seo', label: 'SEO' },
-  { id: 'video', label: 'Video' },
   { id: 'social-media', label: 'Social Media' },
 ]
 
