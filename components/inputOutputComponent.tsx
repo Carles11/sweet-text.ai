@@ -28,7 +28,6 @@ const InputOutputComponent = ({ template }) => {
       }),
     })
     const { reply } = await result.json()
-    console.log({ reply })
     setOutput(reply || '')
   }
 

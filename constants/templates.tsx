@@ -32,29 +32,72 @@ export type Template = {
 export const TEMPLATES: Template[] = [
   {
     id: 'a6dc-0f21-c102-6c22',
-    title: 'Long text description (paragraphs)',
-    description: 'Create compelling product descriptions for Amazon listings.',
-    command: 'Create compelling product descriptions for Amazon listings.',
+    title: 'Scientific paper (paragraphs)',
+    description: 'Create a compelling scientific paper.',
+    command: 'Create a compelling scientific paper.',
     icon: faFileLines,
     categories: ['ecommerce', 'ads'],
     inputs: [
       {
-        id: 'product-name',
-        label: 'Product Name',
-        placeholder: 'A red t-shirt',
+        id: 'paper-title',
+        label: 'Paper title',
+        placeholder:
+          'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
+        type: 'text',
+      },
+      {
+        id: 'paper-abstract',
+        label: 'Paper abstract',
+        placeholder:
+          'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
+        type: 'text',
+      },
+      {
+        id: 'paper-introduction',
+        label: 'Paper introduction',
+        placeholder:
+          'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
+        type: 'text',
+      },
+      {
+        id: 'paper-methods',
+        label: 'Paper methods',
+        placeholder:
+          'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
+        type: 'text',
+      },
+      {
+        id: 'paper-results',
+        label: 'Paper results',
+        placeholder:
+          'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
+        type: 'text',
+      },
+      {
+        id: 'paper-conclusion',
+        label: 'Paper conclusion',
+        placeholder:
+          'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
         type: 'text',
       },
       {
         id: 'key-features',
-        label: 'Key Features/Benefits',
-        placeholder: 'Stretching, pleasant',
+        label: 'Key Features',
+        placeholder:
+          'Name the features and words that should appear in the paper.',
         type: 'textarea',
       },
       {
         id: 'tone-of-voice',
         label: 'Tone of Voice',
         placeholder:
-          'Select a tone. For example: Witty, Friendly, Disappointed, Polite, Creative, Professional or a known person such as Michael Jordan',
+          'Select a tone. For example: Friendly and professional, conversational and trustworthy, informative and persuasive or write as a known person such as Carl Sagan',
+        type: 'text',
+      },
+      {
+        id: 'paragraphs',
+        label: 'Number of paragraphs',
+        placeholder: 'Select the number of paragraphs you need to have.',
         type: 'text',
       },
     ],

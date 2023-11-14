@@ -50,7 +50,6 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
   }
 
   const outputs = splitOutput(generatedOutput)
-  console.log('myPouttuoiuutuuus', outputs)
   const outputsNumber = outputs[0] === '' ? 0 : outputs.length
   return (
     <div className="w-full lg:w-1/2">

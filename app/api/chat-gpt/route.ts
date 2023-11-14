@@ -28,9 +28,9 @@ export async function POST(request: Request) {
     }
 
     const instruction = createInstruction(template.inputs, inputsData)
+    const mainGoal = template.command
 
     console.log({ instruction })
-    const mainGoal = template.command
     console.log({ mainGoal })
 
     const messages = [
@@ -42,10 +42,10 @@ export async function POST(request: Request) {
       },
     ]
 
-    const messageTest = {
-      role: 'assistant',
-      content: '\n\nThis is a test!',
-    }
+    // const messageTest = {
+    //   role: 'assistant',
+    //   content: '\n\nThis is a test!',
+    // }
 
     try {
       const response: any = await openai.chat.completions.create({
@@ -55,8 +55,6 @@ export async function POST(request: Request) {
         temperature: 0.5,
       })
       const reply = response?.choices[0].message.content
-      console.log({ response, reply })
-
       return NextResponse.json({ reply })
     } catch (error) {
       if (error instanceof OpenAI.APIError) {
