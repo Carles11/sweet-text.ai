@@ -1,4 +1,5 @@
-import React from 'react'
+import { sendEmail } from 'utils/send-email'
+import ContactForm from './form'
 
 const Contact = () => {
   return (
@@ -112,7 +113,6 @@ const Contact = () => {
                     href="#"
                     className="text-base font-medium text-gray-500 md:text-lg dark:text-gray-400"
                   >
-                    {' '}
                     +491782871785
                   </a>
                 </div>
@@ -120,53 +120,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="w-full px-4 lg:w-1/2">
-            <form action="" className="p-6 bg-gray-50 dark:bg-gray-900">
-              <div className="mb-6 ">
-                <label
-                  htmlFor="firstname"
-                  className="block mb-2 font-bold text-gray-700 uppercase dark:text-gray-400"
-                >
-                  Email
-                </label>
-                <input
-                  type="text"
-                  placeholder="abc@gmail.com"
-                  required
-                  className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-100 border border-gray-200 rounded dark:placeholder-gray-500 dark:text-gray-400 dark:border-gray-800 dark:bg-gray-800 "
-                />
-              </div>
-              <div className="mb-6 ">
-                <label
-                  htmlFor="firstname"
-                  className="block mb-2 font-bold text-gray-700 uppercase dark:text-gray-400"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  placeholder="I'm asking information for..."
-                  required
-                  className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-100 border border-gray-200 rounded dark:text-gray-400 dark:placeholder-gray-500 dark:border-gray-800 dark:bg-gray-800 "
-                />
-              </div>
-              <div className="mb-6 ">
-                <label
-                  htmlFor="firstname"
-                  className="block mb-2 font-bold text-gray-700 uppercase dark:text-gray-400"
-                >
-                  Message
-                </label>
-                <textarea
-                  type="message"
-                  placeholder="Describe your issue"
-                  required
-                  className="block w-full px-4 leading-tight text-gray-700 bg-gray-100 border border-gray-200 rounded dark:placeholder-gray-500 py-7 dark:text-gray-400 dark:border-gray-800 dark:bg-gray-800 "
-                ></textarea>
-              </div>
-              <button className="px-4 py-2 font-medium text-gray-100 bg-blue-600 rounded shadow hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-700">
-                Send
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </div>

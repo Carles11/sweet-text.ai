@@ -5,10 +5,10 @@ export const SIDEBAR_ITEMS: any = [
   },
   {
     label: 'About me',
-    url: '/views/about-us',
+    url: '/about-us',
   },
   {
     label: 'Contact',
-    url: '/views/contact',
+    url: '/contact',
   },
 ]
