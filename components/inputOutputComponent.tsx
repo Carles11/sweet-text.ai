@@ -50,6 +50,10 @@ const InputOutputComponent = ({ template }) => {
           <p className="font-normal text-gray-700 dark:text-gray-400 opacity-80">
             Give chat-gpt a little time. You´ll very soon see its answers here.
           </p>
+          <p className="font-normal text-gray-700 dark:text-gray-400 opacity-80">
+            Once you see the output, just click on the one you like to copy it
+            to your clipboard.{' '}
+          </p>
           <div
             role="status"
             className="absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2"

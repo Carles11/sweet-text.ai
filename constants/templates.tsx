@@ -33,7 +33,7 @@ export type Template = {
 }
 ;[
   '',
-  '5e62-c18c-0011-5fa5',
+  '',
   '6f73-d29d-1100-6eb6',
   '7g84-e3ae-cc22-7dc7',
   '8h95-f4bf-dd33-8cb8',
@@ -168,21 +168,21 @@ export const TEMPLATES: Template[] = [
       {
         id: 'tone-of-voice',
         label: 'Tone of Voice',
-        placeholder: 'Select a tone...',
+        placeholder: 'Select a tone.',
         type: 'select',
         options: tonOfVoiceOptions,
       },
 
       {
         id: 'paper-paragraphs',
-        label: 'Number of Paragraphs',
-        placeholder: 'Enter the number of paragraphs...',
+        label: 'Number of paragraphs',
+        placeholder: 'Enter the number of paragraphs the output should have.',
         type: 'number',
       },
 
       {
         id: 'paper-words',
-        label: 'Number of Words',
+        label: 'Number of words',
         placeholder: 'How many words should the abstract have in total.',
         type: 'number',
       },
@@ -213,21 +213,21 @@ export const TEMPLATES: Template[] = [
       {
         id: 'tone-of-voice',
         label: 'Tone of Voice',
-        placeholder: 'Select a tone...',
+        placeholder: 'Select a tone.',
         type: 'select',
         options: tonOfVoiceOptions,
       },
 
       {
         id: 'paper-paragraphs',
-        label: 'Number of Paragraphs',
-        placeholder: 'Enter the number of paragraphs...',
+        label: 'Number of paragraphs',
+        placeholder: 'Enter the number of paragraphs your text should have.',
         type: 'number',
       },
 
       {
         id: 'paper-words',
-        label: 'Number of Words',
+        label: 'Number of words',
         placeholder: 'How many words should the abstract have in total.',
         type: 'number',
       },
@@ -273,7 +273,7 @@ export const TEMPLATES: Template[] = [
     ],
   },
   {
-    id: '3c49-af6a-ee00-3d83',
+    id: '5e62-c18c-0011-5fa5',
     title: 'Create a text',
     description: 'Generate a text based on your instructions.',
     command: 'Generate a text based on the following:',
@@ -289,17 +289,30 @@ export const TEMPLATES: Template[] = [
       },
       {
         id: 'text-topic',
-        label: 'Text Topic',
-        placeholder: 'Specify the topic or theme of the text post.',
+        label: 'Text topic',
+        placeholder: 'Specify the topic or theme of the text.',
         type: 'text',
       },
       {
         id: 'text-tone',
         label: 'Tone of text',
         placeholder:
-          'Select the tone for the text post (casual, informative, formal, etc.).',
+          'Select the tone for the text (casual, informative, formal, etc.).',
         type: 'select',
         options: tonOfVoiceOptions,
+      },
+      {
+        id: 'paper-paragraphs',
+        label: 'Number of paragraphs',
+        placeholder: 'Enter the number of paragraphs your text should have.',
+        type: 'number',
+      },
+
+      {
+        id: 'paper-words',
+        label: 'Number of words',
+        placeholder: 'How many words should the abstract have in total.',
+        type: 'number',
       },
     ],
   },
@@ -307,7 +320,8 @@ export const TEMPLATES: Template[] = [
     id: '3c49-af6a-ee00-3d83',
     title: 'Summarize a text',
     description: 'Summarize the length of your text.',
-    command: 'Summarize the length of your text.',
+    command:
+      'Summarize the following text. Keep the most relevant parts based on the key-words given.',
     icon: faEdit,
     categories: ['text'],
     inputs: [
@@ -319,18 +333,25 @@ export const TEMPLATES: Template[] = [
         options: textTypes,
       },
       {
-        id: 'blog-topic',
-        label: 'Blog Topic',
-        placeholder: 'Specify the topic or theme of the blog post.',
-        type: 'text',
-      },
-      {
-        id: 'blog-tone',
-        label: 'Tone of Blog',
+        id: 'text-tone',
+        label: 'Tone of text',
         placeholder:
-          'Select the tone for the blog post (casual, informative, formal, etc.).',
+          'Select the tone for the text (casual, informative, formal, etc.).',
         type: 'select',
         options: tonOfVoiceOptions,
+      },
+      {
+        id: 'key-words',
+        label: 'Key Words',
+        placeholder:
+          'Name the for you most relevant features and the key words that shouldn´t be missing in the summarized text.',
+        type: 'textarea',
+      },
+      {
+        id: 'text-target',
+        label: 'Add your text',
+        placeholder: 'Paste here the text you need to summarize.',
+        type: 'textarea',
       },
     ],
   },
@@ -350,16 +371,16 @@ export const TEMPLATES: Template[] = [
         options: textTypes,
       },
       {
-        id: 'blog-topic',
-        label: 'Blog Topic',
-        placeholder: 'Specify the topic or theme of the blog post.',
+        id: 'text-topic',
+        label: 'Text topic',
+        placeholder: 'Specify the topic or theme of the text.',
         type: 'text',
       },
       {
-        id: 'blog-tone',
-        label: 'Tone of Blog',
+        id: 'text-tone',
+        label: 'Tone of text',
         placeholder:
-          'Select the tone for the blog post (casual, informative, formal, etc.).',
+          'Select the tone for the text (casual, informative, formal, etc.).',
         type: 'select',
         options: tonOfVoiceOptions,
       },

@@ -73,7 +73,7 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
         </div>
       </div>
 
-      <div className="w-full text-gray-900 bg-white mt-4">
+      <div className="w-full text-gray-900 bg-white p-8">
         {generatedOutput ? (
           <>
             {outputs.map((answer, index) => (
@@ -101,8 +101,8 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
             ))}
           </>
         ) : (
-          <div className="w-4/5 mx-auto text-gray-900 bg-white border border-gray-200 p-4 rounded-md shadow-sm flex items-center justify-center">
-            <span className="text-lg font-normal text-gray-200">
+          <div className="w-4/5 mx-auto text-gray-900 bg-white border border-gray-200 p-8 rounded-md shadow-sm flex items-center justify-center">
+            <span className="text-lg font-normal text-gray-400">
               No output generated yet.
             </span>
           </div>
