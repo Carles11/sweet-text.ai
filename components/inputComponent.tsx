@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState, Dispatch } from 'react'
 import TemplateHeader from './templateHeader'
 import { Template } from 'constants/templates'
+import { renderInputField } from 'utils/renderInputField'
 
 interface InputComponentProps {
   generateOutput: (
@@ -10,55 +11,16 @@ interface InputComponentProps {
     inputsData: { [key: string]: string }
   ) => void
   template: Template
+  setIsLoading: Dispatch<React.SetStateAction<boolean>>
+  isLoading: boolean
 }
 
-const renderInputField = (
-  input: {
-    id: any
-    label: any
-    placeholder?: string
-    type?: 'text' | 'textarea' | 'select'
-    options?: string[] | undefined
-  },
-  value: string,
-  handleChange: (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void
-) => {
-  if (input.type === 'textarea') {
-    return (
-      <textarea
-        id={input.id}
-        value={value}
-        onChange={handleChange}
-        className="w-full p-2 mt-2 text-gray-900 bg-white border border-gray-200 rounded-lg"
-        placeholder={input.placeholder}
-        rows={4}
-        maxLength={800}
-      />
-    )
-  } else if (input.type === 'text') {
-    return (
-      <input
-        maxLength={300}
-        type="text"
-        id={input.id}
-        value={value}
-        onChange={handleChange}
-        className="w-full p-2 mt-2 text-gray-900 bg-white border border-gray-200 rounded-lg"
-        placeholder={input.placeholder}
-      />
-    )
-  } else {
-    return <></>
-  }
-  return null
-}
 const InputComponent: React.FC<InputComponentProps> = ({
   template,
   generateOutput,
+  setIsLoading,
+  isLoading,
 }) => {
-  const [isLoading, setIsLoading] = useState(false)
   const [inputsData, setInputsData] = useState<{ [key: string]: string }>({})
   const handleInputChange = (e: any) => {
     setInputsData({ ...inputsData, [e.target.id]: e.target.value })
@@ -78,6 +40,7 @@ const InputComponent: React.FC<InputComponentProps> = ({
     }
     return false
   }
+
   return (
     <div className="w-full lg:w-1/2 bg-gray-50 border-r flex flex-col">
       <TemplateHeader
@@ -91,7 +54,7 @@ const InputComponent: React.FC<InputComponentProps> = ({
             id: any
             label: any
             placeholder?: string
-            type?: 'text' | 'textarea' | 'select'
+            type: 'text' | 'textarea' | 'select' | 'number'
             options?: string[] | undefined
           }) => (
             <label
@@ -117,12 +80,11 @@ const InputComponent: React.FC<InputComponentProps> = ({
           Clear inputs
         </button>
         <button
-          onClick={async () => {
+          onClick={() => {
             setIsLoading(true)
             generateOutput(template, inputsData)
-            setIsLoading(false)
           }}
-          className={`px-4 py-2 text-white bg-gradient-to-r from-purple-400 to-blue-400 rounded-md hover:from-purple-300 hover:to-blue-300 relative ${
+          className={`px-4 py-2 text-white bg-gradient-to-r from-purple-400 to-blue-400 rounded-md hover:cursor-pointer hover:from-purple-300 hover:to-blue-300 relative ${
             isLoading ? 'opacity-50' : ''
           }`}
           disabled={isLoading || isFirstInputEmpty()}
@@ -132,7 +94,7 @@ const InputComponent: React.FC<InputComponentProps> = ({
               <div className="w-4 h-4 border-t-2 border-purple-500 border-solid rounded-full animate-spin"></div>
             </div>
           )}
-          <span className={`${isLoading ? 'invisible' : ''}`}>Generate</span>
+          <span>{`${isLoading ? 'Loading...' : 'Generate'}`}</span>
         </button>
       </div>
     </div>

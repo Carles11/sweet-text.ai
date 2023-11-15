@@ -4,6 +4,7 @@
 import { ScriptProps } from 'next/script'
 import { SIDEBAR_ITEMS } from 'constants/menuItems'
 import Sidebar from 'components/menus/sideBar'
+import Footer from 'components/footer'
 import Head from 'next/head'
 import './globals.css'
 
@@ -67,6 +68,7 @@ const RootLayout: React.FC<ScriptProps> = ({ children, title }) => {
             {children}
           </main>
         </div>
+        <Footer />
       </body>
       {/* <NextScript /> */}
     </html>

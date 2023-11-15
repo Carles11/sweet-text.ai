@@ -12,7 +12,7 @@ const categoriesData = [
   { id: 'email', label: 'Email' },
   { id: 'science', label: 'Science' },
   { id: 'products', label: 'Products' },
-  { id: 'marketing', label: 'Marketing' },
+  { id: ' ', label: 'Marketing' },
   { id: 'social-media', label: 'Social Media' },
 ]
 

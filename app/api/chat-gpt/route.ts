@@ -30,22 +30,18 @@ export async function POST(request: Request) {
     const instruction = createInstruction(template.inputs, inputsData)
     const mainGoal = template.command
 
-    console.log({ instruction })
-    console.log({ mainGoal })
-
     const messages = [
       { role: 'system', content: 'You are a helpful assistant.' },
       {
         role: 'user',
         content: `Your task is: "${mainGoal}".\n\nHere are the details:\n${instruction}. 
-            Please suggest 3 outputs. number them 1,2,3`,
+        Please suggest 3 outputs. number them 1,2,3`,
       },
     ]
 
-    // const messageTest = {
-    //   role: 'assistant',
-    //   content: '\n\nThis is a test!',
-    // }
+    // console.log({ instruction })
+    // console.log({ mainGoal })
+    console.log('Message sent----->: ', messages[1].content)
 
     try {
       const response: any = await openai.chat.completions.create({
