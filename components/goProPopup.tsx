@@ -19,11 +19,16 @@ const GoProPopup: React.FC<GoProPopupProps> = ({ onClose }) => {
         <h1 className="text-black text-3xl md:text-4xl text-center font-bold mb-0">
           There is no Pro Plan
         </h1>
-        <div className="w-5/6 md:w-3/4 mx-auto my-4 text-justify">
+        <div className="w-5/6 md:w-3/4 mx-auto my-4 text-justify text-gray-700">
           <p className="mb-2">
             {' '}
-            If you're a fan of sweetText.ai, feel free to show your support by
-            buying me a coffee.{' '}
+            I created sweetText.ai to be opensource and free. And all its
+            features are and will be forever free.
+          </p>
+          <p className="mb-2">
+            {' '}
+            But if you like sweetText.ai, feel free to show your support by
+            buying me a coffee. I of course appreciate that very much.
           </p>
           <p>
             {' '}
@@ -33,13 +38,13 @@ const GoProPopup: React.FC<GoProPopupProps> = ({ onClose }) => {
               target="_blank"
               rel="noreferrer"
               className="text-purple-700 font-bold"
-              href="https://www.linkedin.com/in/yuval-suede/"
+              href="https://www.linkedin.com/in/carlos-del-rio-frances/"
             >
               Linkedin
             </a>
           </p>
           <div className="mt-10 flex justify-center justify-items-center">
-            <a href="https://ko-fi.com/C0C8JN3UL" target="_blank">
+            <a href="https://ko-fi.com/carlesdelriofrances" target="_blank">
               <img
                 height="36"
                 style={{ border: 0, height: '36px' }}

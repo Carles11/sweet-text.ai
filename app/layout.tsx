@@ -1,14 +1,23 @@
 // @ts-nocheck
 'use client'
 
+import { useState } from 'react'
+
 import { ScriptProps } from 'next/script'
 import { SIDEBAR_ITEMS } from 'constants/menuItems'
+import GoProPopup from 'components/goProPopup'
+
 import Sidebar from 'components/menus/sideBar'
 import Footer from 'components/footer'
 import Head from 'next/head'
 import './globals.css'
 
 const RootLayout: React.FC<ScriptProps> = ({ children, title }) => {
+  const [showPopup, setShowPopup] = useState(false)
+
+  const handlePopup = () => {
+    setShowPopup(!showPopup)
+  }
   return (
     <html lang="en">
       <Head>
@@ -54,10 +63,10 @@ const RootLayout: React.FC<ScriptProps> = ({ children, title }) => {
       <body>
         <div className="min-h-screen relative w-full md:flex md:flex-row">
           <div className="md:hidden z-10 fixed left-0 top-0 h-full">
-            <Sidebar items={SIDEBAR_ITEMS} />
+            <Sidebar onShowPopup={handlePopup} items={SIDEBAR_ITEMS} />
           </div>
           <div className="hidden md:block md:relative ">
-            <Sidebar items={SIDEBAR_ITEMS} />
+            <Sidebar onShowPopup={handlePopup} items={SIDEBAR_ITEMS} />
           </div>
           <main className="w-full md:flex-grow">
             {title && (
@@ -67,6 +76,7 @@ const RootLayout: React.FC<ScriptProps> = ({ children, title }) => {
             )}{' '}
             {children}
           </main>
+          {showPopup && <GoProPopup onClose={() => setShowPopup(false)} />}
         </div>
         <Footer />
       </body>
