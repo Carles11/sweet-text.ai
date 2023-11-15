@@ -34,8 +34,7 @@ export async function POST(request: Request) {
       { role: 'system', content: 'You are a helpful assistant.' },
       {
         role: 'user',
-        content: `Your task is: "${mainGoal}".\n\nHere are the details:\n${instruction}. 
-        Please suggest 3 outputs. number them 1,2,3`,
+        content: `Your task is: "${mainGoal}".\n\nHere are the details:\n${instruction}.`,
       },
     ]
 

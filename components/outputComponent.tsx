@@ -101,7 +101,7 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
             ))}
           </>
         ) : (
-          <div className="w-4/5 mx-auto mt-12 text-gray-900 bg-white border border-gray-200 p-4 rounded-md shadow-sm flex items-center justify-center">
+          <div className="w-4/5 mx-auto text-gray-900 bg-white border border-gray-200 p-4 rounded-md shadow-sm flex items-center justify-center">
             <span className="text-lg font-normal text-gray-200">
               No output generated yet.
             </span>

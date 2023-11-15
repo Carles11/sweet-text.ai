@@ -4,6 +4,7 @@ import React, { useState, Dispatch } from 'react'
 import TemplateHeader from './templateHeader'
 import { Template } from 'constants/templates'
 import { renderInputField } from 'utils/renderInputField'
+import Link from 'next/link'
 
 interface InputComponentProps {
   generateOutput: (
@@ -79,6 +80,7 @@ const InputComponent: React.FC<InputComponentProps> = ({
         >
           Clear inputs
         </button>
+        <Link href={'/'}>Go back</Link>
         <button
           onClick={() => {
             setIsLoading(true)

@@ -31,6 +31,17 @@ export type Template = {
   icon: any
   categories: string[]
 }
+;[
+  '',
+  '5e62-c18c-0011-5fa5',
+  '6f73-d29d-1100-6eb6',
+  '7g84-e3ae-cc22-7dc7',
+  '8h95-f4bf-dd33-8cb8',
+  '9i06-g5c0-ee44-9fad',
+  '0j17-h7d1-ff55-0e09',
+  '1k28-i8e2-0011-1f1c',
+  '2l39-j9f3-1100-2a2b',
+]
 
 const tonOfVoiceOptions = [
   'Friendly and Professional',
@@ -50,7 +61,133 @@ const tonOfVoiceOptions = [
   'Analytical and Data-driven',
   // Add more options as needed
 ]
+
+const textTypes = [
+  'Scientific Text',
+  'Literary Text',
+  'Technical Text',
+  'Persuasive Text',
+  'Informative Text',
+]
+
 export const TEMPLATES: Template[] = [
+  {
+    id: 'b3fd-4a89-e567-1b2c',
+    title: 'Email',
+    description: 'Generate various types of email content.',
+    command: 'Generate email content.',
+    icon: faEnvelope,
+    categories: ['email'],
+    inputs: [
+      {
+        id: 'email-type',
+        label: 'Email Type',
+        placeholder:
+          'Select the type of email (formal, informal, sales, etc.).',
+        type: 'select',
+        options: [
+          'Formal Business',
+          'Informal',
+          'Sales Outreach',
+          'Job Application',
+          'Networking',
+        ],
+      },
+      {
+        id: 'email-recipient',
+        label: 'Email Recipient',
+        placeholder: 'Specify the  addressee of the email.',
+        type: 'text',
+      },
+      {
+        id: 'email-tone',
+        label: 'Tone of email',
+        placeholder: 'Select the tone for the email content .',
+        type: 'select',
+        options: tonOfVoiceOptions,
+      },
+      {
+        id: 'email-purpose',
+        label: 'Email Purpose',
+        placeholder: 'Specify the purpose of the email.',
+        type: 'textarea',
+      },
+    ],
+  },
+  {
+    id: '1a79-8d7e-cc88-1e61',
+    title: 'Email Subject Lines',
+    description: 'Get your emails opened with irresistible subject lines.',
+    command: 'Write Email Subject Lines. use the following : ',
+    icon: faEnvelope,
+    categories: ['email'],
+    inputs: [
+      {
+        id: 'companyName',
+        type: 'text',
+        label: 'Company/Product Name',
+        placeholder: 'SmartMailer',
+      },
+      {
+        id: 'tone',
+        type: 'text',
+        label: 'Tone of voice',
+        placeholder: 'Friendly',
+      },
+      {
+        id: 'emailContent',
+        type: 'textarea',
+        label: 'What is your email about?',
+        placeholder:
+          'Introducing our latest online course on email marketing strategies. Early bird sign-ups get a 25% discount.',
+      },
+    ],
+  },
+  {
+    id: '2b36-9e4f-dd99-2f72',
+    title: 'Paper Introduction',
+    description: 'Create a compelling introduction for a scientific paper.',
+    command: 'Create a compelling introduction for a scientific paper.',
+    icon: faFileLines,
+    categories: ['science'],
+    inputs: [
+      {
+        id: 'paper-title',
+        label: 'Paper Title',
+        placeholder:
+          'Dynamic Changes in Brain Connectivity: A Functional Magnetic Resonance Imaging Study',
+        type: 'text',
+      },
+      {
+        id: 'key-features',
+        label: 'Key Features',
+        placeholder:
+          'Name the features and words that should appear in the abstract.',
+        type: 'textarea',
+      },
+      {
+        id: 'tone-of-voice',
+        label: 'Tone of Voice',
+        placeholder: 'Select a tone...',
+        type: 'select',
+        options: tonOfVoiceOptions,
+      },
+
+      {
+        id: 'paper-paragraphs',
+        label: 'Number of Paragraphs',
+        placeholder: 'Enter the number of paragraphs...',
+        type: 'number',
+      },
+
+      {
+        id: 'paper-words',
+        label: 'Number of Words',
+        placeholder: 'How many words should the abstract have in total.',
+        type: 'number',
+      },
+    ],
+  },
   {
     id: 'a6dc-0f21-c102-6c22',
     title: 'Paper Abstract',
@@ -96,49 +233,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
   },
-  {
-    id: 'b3fd-4a89-e567-1b2c',
-    title: 'Email',
-    description: 'Generate various types of email content.',
-    command: 'Generate email content.',
-    icon: faEnvelope,
-    categories: ['communication'],
-    inputs: [
-      {
-        id: 'email-type',
-        label: 'Email Type',
-        placeholder:
-          'Select the type of email (formal, informal, sales, etc.).',
-        type: 'select',
-        options: [
-          'Formal Business',
-          'Informal',
-          'Sales Outreach',
-          'Job Application',
-          'Networking',
-        ],
-      },
-      {
-        id: 'email-recipient',
-        label: 'Email Recipient',
-        placeholder: 'Specify the recipient of the email.',
-        type: 'text',
-      },
-      {
-        id: 'email-tone',
-        label: 'Tone of email',
-        placeholder: 'Select the tone for the email content .',
-        type: 'select',
-        options: tonOfVoiceOptions,
-      },
-      {
-        id: 'email-purpose',
-        label: 'Email Purpose',
-        placeholder: 'Specify the purpose of the email.',
-        type: 'textarea',
-      },
-    ],
-  },
+
   {
     id: 'c2af-8d3e-fg45-3h6i',
     title: 'Marketing Text',
@@ -178,12 +273,105 @@ export const TEMPLATES: Template[] = [
     ],
   },
   {
+    id: '3c49-af6a-ee00-3d83',
+    title: 'Create a text',
+    description: 'Generate a text based on your instructions.',
+    command: 'Generate a text based on the following:',
+    icon: faEdit,
+    categories: ['text'],
+    inputs: [
+      {
+        id: 'text-type',
+        label: 'Text Type',
+        placeholder: 'Select the type of your text.',
+        type: 'select',
+        options: textTypes,
+      },
+      {
+        id: 'text-topic',
+        label: 'Text Topic',
+        placeholder: 'Specify the topic or theme of the text post.',
+        type: 'text',
+      },
+      {
+        id: 'text-tone',
+        label: 'Tone of text',
+        placeholder:
+          'Select the tone for the text post (casual, informative, formal, etc.).',
+        type: 'select',
+        options: tonOfVoiceOptions,
+      },
+    ],
+  },
+  {
+    id: '3c49-af6a-ee00-3d83',
+    title: 'Summarize a text',
+    description: 'Summarize the length of your text.',
+    command: 'Summarize the length of your text.',
+    icon: faEdit,
+    categories: ['text'],
+    inputs: [
+      {
+        id: 'text-type',
+        label: 'Text Type',
+        placeholder: 'Select the type of your text.',
+        type: 'select',
+        options: textTypes,
+      },
+      {
+        id: 'blog-topic',
+        label: 'Blog Topic',
+        placeholder: 'Specify the topic or theme of the blog post.',
+        type: 'text',
+      },
+      {
+        id: 'blog-tone',
+        label: 'Tone of Blog',
+        placeholder:
+          'Select the tone for the blog post (casual, informative, formal, etc.).',
+        type: 'select',
+        options: tonOfVoiceOptions,
+      },
+    ],
+  },
+  {
+    id: 'e4cd-5a8b-hi67-3j4k',
+    title: 'Enhance a text',
+    description: 'Enhance the length of your text.',
+    command: 'Enhance the length of your text.',
+    icon: faEdit,
+    categories: ['text'],
+    inputs: [
+      {
+        id: 'text-type',
+        label: 'Text Type',
+        placeholder: 'Select the type of your text.',
+        type: 'select',
+        options: textTypes,
+      },
+      {
+        id: 'blog-topic',
+        label: 'Blog Topic',
+        placeholder: 'Specify the topic or theme of the blog post.',
+        type: 'text',
+      },
+      {
+        id: 'blog-tone',
+        label: 'Tone of Blog',
+        placeholder:
+          'Select the tone for the blog post (casual, informative, formal, etc.).',
+        type: 'select',
+        options: tonOfVoiceOptions,
+      },
+    ],
+  },
+  {
     id: 'd7bc-9f4a-g345-4i2j',
     title: 'Website Text',
     description: 'Generate content for different sections of a website.',
     command: 'Generate website content.',
     icon: faGlobe,
-    categories: ['web'],
+    categories: ['website'],
     inputs: [
       {
         id: 'website-section',
@@ -216,43 +404,6 @@ export const TEMPLATES: Template[] = [
       },
     ],
   },
-  {
-    id: 'e4cd-5a8b-hi67-3j4k',
-    title: 'Blog',
-    description: 'Generate content for blog posts.',
-    command: 'Generate blog content.',
-    icon: faEdit,
-    categories: ['writing'],
-    inputs: [
-      {
-        id: 'blog-type',
-        label: 'Blog Type',
-        placeholder:
-          'Select the type of blog post (how-to guides, opinion pieces, product reviews, industry insights, listicles, etc.).',
-        type: 'select',
-        options: [
-          'How-to Guides',
-          'Opinion Pieces',
-          'Product Reviews',
-          'Industry Insights',
-          'Listicles',
-        ],
-      },
-      {
-        id: 'blog-topic',
-        label: 'Blog Topic',
-        placeholder: 'Specify the topic or theme of the blog post.',
-        type: 'text',
-      },
-      {
-        id: 'blog-tone',
-        label: 'Tone of Blog',
-        placeholder:
-          'Select the tone for the blog post (casual, informative, formal, etc.).',
-        type: 'select',
-        options: tonOfVoiceOptions,
-      },
-    ],
-  },
+
   // Add more categories and subcategories as needed
 ]

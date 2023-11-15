@@ -12,13 +12,12 @@ const AboutUs = () => {
                   Who we are?
                 </span>
                 <h1 className="mt-2 text-3xl font-black text-gray-700 md:text-5xl dark:text-gray-300">
-                  About Us
+                  About me
                 </h1>
               </div>
               <p className="px-4 mb-10 text-base leading-7 text-gray-500 dark:text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam Lorem ipsum dolor sit amet.
+                My name is Carles del Río, I have been coding for 5 years now
+                and I created this app fo fun. Here are some data about the app.
               </p>
               <div className="flex flex-wrap items-center">
                 <div className="w-full px-4 mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
