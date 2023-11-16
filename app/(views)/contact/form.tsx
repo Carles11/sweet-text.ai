@@ -31,8 +31,6 @@ export default function ContactForm({
     let isValidForm = handleValidation()
     const data = { fullname, email, subject, message }
 
-    console.log({ isValidForm, data })
-
     if (isValidForm) {
       setButtonText('Sending')
       handleSubmit(data, resetForm)
@@ -73,7 +71,6 @@ export default function ContactForm({
     }
 
     setErrors({ ...tempErrors })
-    console.log('errorsii', errors)
     return isValid
   }
   return (
