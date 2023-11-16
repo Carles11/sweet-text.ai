@@ -2,7 +2,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import Script from 'next/script'
 
 import { SIDEBAR_ITEMS } from 'constants/menuItems'
 import GoProPopup from 'components/goProPopup'
@@ -61,11 +60,7 @@ const RootLayout = ({
           content="https://www.sweet-text.ai/sweet-text.ai.png"
         />
       </Head>
-      <Script
-        src="https://my.hellobar.com/ad70057c85f0c544997c44ae0968d20f1b802252.js"
-        type="text/javascript"
-        charSet="utf-8"
-      ></Script>
+
       <body>
         <div className="min-h-screen relative w-full md:flex md:flex-row">
           <div className="md:hidden z-10 fixed left-0 top-0 h-full">
