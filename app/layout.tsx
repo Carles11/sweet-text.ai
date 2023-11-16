@@ -1,10 +1,9 @@
 // @ts-nocheck
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Script from 'next/script'
 
-import { ScriptProps } from 'next/script'
 import { SIDEBAR_ITEMS } from 'constants/menuItems'
 import GoProPopup from 'components/goProPopup'
 
@@ -13,7 +12,11 @@ import Footer from 'components/footer'
 import Head from 'next/head'
 import './globals.css'
 
-const RootLayout: React.FC<ScriptProps> = ({ children, title }) => {
+const RootLayout = ({
+  children, // will be a page or nested layout
+}: {
+  children: React.ReactNode
+}) => {
   const [showPopup, setShowPopup] = useState(false)
 
   const handlePopup = () => {
@@ -22,21 +25,23 @@ const RootLayout: React.FC<ScriptProps> = ({ children, title }) => {
   return (
     <html lang="en">
       <Head>
+        <meta name="robots" content="all" />
         <link rel="icon" href="/images/sweet-text-logo.png" />
+        <title>sweet-text.ai | An Opensource AI-powered text-generator</title>
         <meta
           name="title"
-          content="sweet-text.ai: An Open Source AT text-generator"
+          content="sweet-text.ai | An Opensource AI-powered text-generator"
         />
         <meta
           name="description"
-          content="sweet-text.ai is an open-source alternative to Jasper, providing powerful AI-driven content generation for marketers,
+          content="sweet-text.ai is an open-source app, providing powerful AI-driven content generation for marketers,
             writers, and businesses. Discover the potential of AI-powered content creation with sweet-text.ai"
         />
         <meta property="og:site_name" content="sweet-text.ai" />
 
         <meta
           property="og:title"
-          content="sweet-text.ai: An Open Source AT text-generator"
+          content="sweet-text.ai | An Opensource AI-powered text-generator"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -45,7 +50,7 @@ const RootLayout: React.FC<ScriptProps> = ({ children, title }) => {
         />
         <meta
           name="twitter:description"
-          content="sweet-text.ai is an open-source alternative to Jasper, providing powerful AI-driven content generation for marketers, writers, and businesses."
+          content="sweet-text.ai is an open-source app, providing powerful AI-driven content generation for marketers, writers, and businesses."
         />
         <meta
           property="og:image"
@@ -69,14 +74,7 @@ const RootLayout: React.FC<ScriptProps> = ({ children, title }) => {
           <div className="hidden md:block md:relative ">
             <Sidebar onShowPopup={handlePopup} items={SIDEBAR_ITEMS} />
           </div>
-          <main className="w-full md:flex-grow">
-            {title && (
-              <h1 className="text-black text-2xl font-bold mb-4 mt-10 pr-4 pl-4 pt-4">
-                {title}
-              </h1>
-            )}{' '}
-            {children}
-          </main>
+          <main className="w-full md:flex-grow">{children}</main>
           {showPopup && <GoProPopup onClose={() => setShowPopup(false)} />}
         </div>
         <Footer />
