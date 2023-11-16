@@ -1,7 +1,15 @@
-import { sendEmail } from 'utils/send-email'
+'use client'
+
+import { emailSend } from 'utils/send-email'
 import ContactForm from './form'
 
 const Contact = () => {
+  const handleSubmit = (data: {}, resetForm: () => void) => {
+    console.log('submitting', data)
+
+    emailSend(data, resetForm)
+  }
+
   return (
     <section className="flex items-center bg-stone-100 lg:h-screen font-poppins dark:bg-gray-800 ">
       <div className="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto lg:py-11 md:px-6">
@@ -10,7 +18,8 @@ const Contact = () => {
             Let's Stay Connected
           </h2>
           <p className="text-sm dark:text-gray-400">
-            Lorem ipsum dor amet ispicusus isopiros amet ispis lorem{' '}
+            Reach Out to Us – Let's Stay Connected for Inquiries, Support and
+            Collaboration.{' '}
           </p>
         </div>
         <div className="flex flex-wrap ">
@@ -120,7 +129,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="w-full px-4 lg:w-1/2">
-            <ContactForm />
+            <ContactForm handleSubmit={handleSubmit} />
           </div>
         </div>
       </div>

@@ -1,30 +1,94 @@
 'use client'
 
-import { FormEventHandler, useState } from 'react'
+import { useState } from 'react'
+import Toast from 'components/toast'
 
 export default function ContactForm({
   handleSubmit,
 }: {
-  handleSubmit: FormEventHandler<HTMLFormElement>
+  handleSubmit: Function
 }) {
   const [fullname, setFullname] = useState('')
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
+  //   Form validation state
+  const [errors, setErrors] = useState({})
 
+  //   Setting button text on form submission
+  const [buttonText, setButtonText] = useState('Send')
+
+  // Setting success or failure messages states
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+  const [showFailureMessage, setShowFailureMessage] = useState(false)
+  const handleDataSubmit = () => {
+    let isValidForm = handleValidation()
+    const data = { fullname, email, subject, message }
+    console.log({ data })
+    if (isValidForm) {
+      setButtonText('Sending')
+      handleSubmit(data, resetForm)
+      setButtonText('Send')
+    }
+    return (
+      <Toast
+        message={'There are errors in your form. Please review'}
+        duration={3000}
+        onDismiss
+      />
+    )
+  }
+
+  const resetForm = () => {
+    setFullname('')
+    setEmail('')
+    setSubject('')
+    setMessage('')
+  }
+
+  // Validation check method
+  const handleValidation = () => {
+    let tempErrors = {}
+    let isValid = true
+
+    if (fullname.length <= 0) {
+      tempErrors['fullname'] = true
+      isValid = false
+    }
+    if (email.length <= 0 || !/\S+@\S+\.\S+/.test(email)) {
+      tempErrors['email'] = true
+      isValid = false
+    }
+    if (subject.length <= 0) {
+      tempErrors['subject'] = true
+      isValid = false
+    }
+    if (message.length <= 0) {
+      tempErrors['message'] = true
+      isValid = false
+    }
+
+    setErrors({ ...tempErrors })
+    console.log('errors', errors)
+    return isValid
+  }
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={handleDataSubmit}
       className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white"
     >
+      {}
       <h1 className="text-2xl font-bold text-gray-500">Send a message</h1>
-
       <label
         htmlFor="fullname"
         className="text-gray-500 font-light mt-8 text-gray-50"
       >
         Full name<span className="text-red-500 text-gray-50">*</span>
       </label>
+      {errors['fullname'] && (
+        <span style={{ color: 'red' }}>Please enter your full name</span>
+      )}
+
       <input
         type="text"
         value={fullname}
@@ -41,6 +105,10 @@ export default function ContactForm({
       >
         E-mail<span className="text-red-500">*</span>
       </label>
+      {errors['email'] && (
+        <span style={{ color: 'red' }}>Please enter a valid email address</span>
+      )}
+
       <input
         type="email"
         name="email"
@@ -57,6 +125,9 @@ export default function ContactForm({
       >
         Subject<span className="text-red-500">*</span>
       </label>
+      {errors['subject'] && (
+        <span style={{ color: 'red' }}>Please enter a subject</span>
+      )}
       <input
         type="text"
         name="subject"
@@ -73,6 +144,10 @@ export default function ContactForm({
       >
         Message<span className="text-red-500">*</span>
       </label>
+      {errors['message'] && (
+        <span style={{ color: 'red' }}>Please enter a message</span>
+      )}
+
       <textarea
         name="message"
         value={message}
@@ -87,7 +162,7 @@ export default function ContactForm({
           type="submit"
           className="px-10 mt-8 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-lg flex flex-row items-center"
         >
-          Submit
+          {buttonText}
           <svg
             width="24"
             height="24"
