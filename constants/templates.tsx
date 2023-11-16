@@ -416,7 +416,7 @@ export const TEMPLATES: Template[] = [
         id: 'website-tone',
         label: 'Tone of Website',
         placeholder:
-          'Select the tone for the website content (professional, friendly, informative, etc.).',
+          'Select the desired tone for the website content (professional, friendly, informative, etc.).',
         type: 'select',
         options: tonOfVoiceOptions,
       },
