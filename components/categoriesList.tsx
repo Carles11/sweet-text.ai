@@ -25,7 +25,7 @@ const CategoriesList = ({
 
   useEffect(() => {
     onSelectedCategory(selectedCategoryId)
-  }, [selectedCategoryId])
+  }, [onSelectedCategory, selectedCategoryId])
 
   const handleCategoryChange = (categoryId: string) => {
     setSelectedCategoryId(categoryId)
