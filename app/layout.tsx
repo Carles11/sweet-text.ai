@@ -2,6 +2,7 @@
 'use client'
 
 import { useState } from 'react'
+import Script from 'next/script'
 
 import { ScriptProps } from 'next/script'
 import { SIDEBAR_ITEMS } from 'constants/menuItems'
@@ -54,11 +55,11 @@ const RootLayout: React.FC<ScriptProps> = ({ children, title }) => {
           name="twitter:image"
           content="https://www.sweet-text.ai/sweet-text.ai.png"
         />
-        <script
+        <Script
           src="https://my.hellobar.com/ad70057c85f0c544997c44ae0968d20f1b802252.js"
           type="text/javascript"
           charSet="utf-8"
-        ></script>
+        ></Script>
       </Head>
       <body>
         <div className="min-h-screen relative w-full md:flex md:flex-row">

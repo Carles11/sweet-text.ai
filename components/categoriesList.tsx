@@ -16,8 +16,11 @@ const categoriesData = [
   { id: 'website', label: 'Website' },
 ]
 
-// @ts-ignore
-const CategoriesList = ({ onSelectedCategory }) => {
+const CategoriesList = ({
+  onSelectedCategory,
+}: {
+  onSelectedCategory: Function
+}) => {
   const [selectedCategoryId, setSelectedCategoryId] = useState('all')
 
   useEffect(() => {

@@ -18,11 +18,11 @@ const Contact = () => {
       <div className="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto lg:py-11 md:px-6">
         <div className="mb-10 text-left">
           <h2 className="pb-2 mb-2 text-xl font-bold text-gray-800 md:text-3xl dark:text-gray-300">
-            Let's Stay Connected
+            Let&apos;s Stay Connected
           </h2>
           <p className="text-sm dark:text-gray-400">
-            Reach Out to Us – Let's Stay Connected for Inquiries, Support and
-            Collaboration.{' '}
+            Reach Out to Us | Let&apos;s Stay Connected for Inquiries, Support
+            and Collaboration.{' '}
           </p>
         </div>
         <div className="flex flex-wrap ">

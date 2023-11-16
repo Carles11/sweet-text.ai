@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import Image from 'next/image'
 
 interface GoProPopupProps {
   onClose: () => void
@@ -47,8 +48,8 @@ const GoProPopup: React.FC<GoProPopupProps> = ({ onClose }) => {
           </p>
           <p>
             {' '}
-            Also if you have any questions or feature requests, don't be shy!
-            Hit me up on{' '}
+            Also if you have any questions or feature requests, don&apos;t be
+            shy! Hit me up on{' '}
             <a
               target="_blank"
               rel="noreferrer"
@@ -60,7 +61,7 @@ const GoProPopup: React.FC<GoProPopupProps> = ({ onClose }) => {
           </p>
           <div className="mt-10 flex justify-center justify-items-center">
             <a href="https://ko-fi.com/carlesdelriofrances" target="_blank">
-              <img
+              <Image
                 height="36"
                 style={{ border: 0, height: '36px' }}
                 src="https://storage.ko-fi.com/cdn/kofi1.png?v=3"
