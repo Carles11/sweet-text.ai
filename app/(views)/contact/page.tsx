@@ -4,7 +4,10 @@ import { emailSend } from 'utils/send-email'
 import ContactForm from './form'
 
 const Contact = () => {
-  const handleSubmit = (data: {}, resetForm: () => void) => {
+  const handleSubmit = (
+    data: Record<string, string>,
+    resetForm: () => void
+  ) => {
     console.log('submitting', data)
 
     emailSend(data, resetForm)

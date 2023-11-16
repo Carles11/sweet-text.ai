@@ -8,9 +8,9 @@ export const emailSend = (
   const serviceID = process.env.EMAIL_JS_SERVICE_ID
   const templateID = process.env.EMAIL_JS_TEMPLATE_ID
   init(`${process.env.EMAIL_JS_USER_ID}`)
-  debugger
-  console.log({ serviceID, templateID, data })
 
+  console.log({ serviceID, templateID, data })
+  debugger
   emailjs.send(serviceID!, templateID!, data).then(
     (result) => {
       resetForm()

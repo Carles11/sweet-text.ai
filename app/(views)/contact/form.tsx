@@ -13,7 +13,7 @@ export default function ContactForm({
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
   //   Form validation state
-  const [errors, setErrors] = useState({})
+  const [errors, setErrors] = useState<Record<string, boolean>>({})
 
   //   Setting button text on form submission
   const [buttonText, setButtonText] = useState('Send')
@@ -21,22 +21,26 @@ export default function ContactForm({
   // Setting success or failure messages states
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
   const [showFailureMessage, setShowFailureMessage] = useState(false)
+
+  const handleToastDismiss = () => {
+    setShowSuccessMessage(false)
+    setShowFailureMessage(false)
+  }
+
   const handleDataSubmit = () => {
     let isValidForm = handleValidation()
     const data = { fullname, email, subject, message }
-    console.log({ data })
+
+    console.log({ isValidForm, data })
+
     if (isValidForm) {
       setButtonText('Sending')
       handleSubmit(data, resetForm)
       setButtonText('Send')
+      setShowSuccessMessage(true)
+    } else {
+      setShowFailureMessage(true)
     }
-    return (
-      <Toast
-        message={'There are errors in your form. Please review'}
-        duration={3000}
-        onDismiss
-      />
-    )
   }
 
   const resetForm = () => {
@@ -48,7 +52,7 @@ export default function ContactForm({
 
   // Validation check method
   const handleValidation = () => {
-    let tempErrors = {}
+    let tempErrors: Record<string, boolean> = {}
     let isValid = true
 
     if (fullname.length <= 0) {
@@ -69,7 +73,7 @@ export default function ContactForm({
     }
 
     setErrors({ ...tempErrors })
-    console.log('errors', errors)
+    console.log('errorsii', errors)
     return isValid
   }
   return (
@@ -77,7 +81,20 @@ export default function ContactForm({
       onSubmit={handleDataSubmit}
       className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white"
     >
-      {}
+      {showSuccessMessage && (
+        <Toast
+          message="Message received! We´ll contact you soon."
+          duration={3000}
+          onDismiss={handleToastDismiss}
+        />
+      )}
+      {showFailureMessage && (
+        <Toast
+          message="Something went wrong. Please try again later."
+          duration={3000}
+          onDismiss={handleToastDismiss}
+        />
+      )}
       <h1 className="text-2xl font-bold text-gray-500">Send a message</h1>
       <label
         htmlFor="fullname"
