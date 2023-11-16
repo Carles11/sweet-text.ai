@@ -59,7 +59,7 @@ const tonOfVoiceOptions = [
   'Direct and Concise',
   'Storytelling and Narrative',
   'Analytical and Data-driven',
-  // Add more options as needed
+  // Add some more options as needed
 ]
 
 const textTypes = [
