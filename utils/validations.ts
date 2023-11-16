@@ -1,12 +1,23 @@
-export const handleValidation = () => {
-  let tempErrors = {}
+import React, { Dispatch } from 'react'
+
+export const handleValidation = (
+  data: {
+    fullname: string
+    email: string
+    subject: string
+    message: string
+  },
+  setErrors: Dispatch<React.SetStateAction<Record<string, boolean>>>
+) => {
+  let tempErrors: Record<string, boolean> = {}
   let isValid = true
+  const { fullname, email, subject, message } = data
 
   if (fullname.length <= 0) {
     tempErrors['fullname'] = true
     isValid = false
   }
-  if (email.length <= 0) {
+  if (email.length <= 0 || !/\S+@\S+\.\S+/.test(email)) {
     tempErrors['email'] = true
     isValid = false
   }
@@ -20,6 +31,5 @@ export const handleValidation = () => {
   }
 
   setErrors({ ...tempErrors })
-  console.log('errors', errors)
   return isValid
 }

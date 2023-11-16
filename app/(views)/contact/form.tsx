@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Toast from 'components/toast'
+import { handleValidation } from 'utils/validations'
 
 export default function ContactForm({
   handleSubmit,
@@ -28,8 +29,8 @@ export default function ContactForm({
   }
 
   const handleDataSubmit = () => {
-    let isValidForm = handleValidation()
     const data = { fullname, email, subject, message }
+    let isValidForm = handleValidation(data, setErrors)
 
     if (isValidForm) {
       setButtonText('Sending')
@@ -48,31 +49,6 @@ export default function ContactForm({
     setMessage('')
   }
 
-  // Validation check method
-  const handleValidation = () => {
-    let tempErrors: Record<string, boolean> = {}
-    let isValid = true
-
-    if (fullname.length <= 0) {
-      tempErrors['fullname'] = true
-      isValid = false
-    }
-    if (email.length <= 0 || !/\S+@\S+\.\S+/.test(email)) {
-      tempErrors['email'] = true
-      isValid = false
-    }
-    if (subject.length <= 0) {
-      tempErrors['subject'] = true
-      isValid = false
-    }
-    if (message.length <= 0) {
-      tempErrors['message'] = true
-      isValid = false
-    }
-
-    setErrors({ ...tempErrors })
-    return isValid
-  }
   return (
     <form
       onSubmit={handleDataSubmit}
