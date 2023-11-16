@@ -408,7 +408,7 @@ export const TEMPLATES: Template[] = [
         id: 'website-section',
         label: 'Website Section',
         placeholder:
-          'Select the section of the website (home, about us, services/products, FAQs, contact, etc.).',
+          'Select the section of the website (home, about us, services or products, FAQs, contact, etc.).',
         type: 'select',
         options: websiteSections,
       },
