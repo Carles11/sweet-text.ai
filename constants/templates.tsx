@@ -40,7 +40,7 @@ export type Template = {
   '9i06-g5c0-ee44-9fad',
   '0j17-h7d1-ff55-0e09',
   '1k28-i8e2-0011-1f1c',
-  '2l39-j9f3-1100-2a2b',
+  '2l39-j9f3-5100-2a2b',
 ]
 
 const tonOfVoiceOptions = [
