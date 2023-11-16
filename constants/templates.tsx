@@ -34,7 +34,7 @@ export type Template = {
 ;[
   '',
   '',
-  '6f73-d29d-1100-6eb6',
+  '',
   '7g84-e3ae-cc22-7dc7',
   '8h95-f4bf-dd33-8cb8',
   '9i06-g5c0-ee44-9fad',
@@ -70,7 +70,131 @@ const textTypes = [
   'Informative Text',
 ]
 
+const blogTypes = ['Technology', 'Health', 'Travel', 'Lifestyle', 'Finance']
+
+const websiteSections = [
+  'Home Page Content',
+  'About Us',
+  'Services/Products',
+  'FAQs',
+  'Contact Page',
+]
+
 export const TEMPLATES: Template[] = [
+  {
+    id: '5e62-c18c-0011-5fa5',
+    title: 'Create a text',
+    description: 'Generate a text based on your instructions.',
+    command: 'Generate a text based on the following:',
+    icon: faEdit,
+    categories: ['text'],
+    inputs: [
+      {
+        id: 'text-type',
+        label: 'Text Type',
+        placeholder: 'Select the type of your text.',
+        type: 'select',
+        options: textTypes,
+      },
+      {
+        id: 'text-topic',
+        label: 'Text topic',
+        placeholder: 'Specify the topic or theme of the text.',
+        type: 'text',
+      },
+      {
+        id: 'text-tone',
+        label: 'Tone of text',
+        placeholder:
+          'Select the tone for the text (casual, informative, formal, etc.).',
+        type: 'select',
+        options: tonOfVoiceOptions,
+      },
+      {
+        id: 'paper-paragraphs',
+        label: 'Number of paragraphs',
+        placeholder: 'Enter the number of paragraphs your text should have.',
+        type: 'number',
+      },
+
+      {
+        id: 'paper-words',
+        label: 'Number of words',
+        placeholder: 'How many words should the abstract have in total.',
+        type: 'number',
+      },
+    ],
+  },
+  {
+    id: '3c49-af6a-ee00-3d83',
+    title: 'Summarize a text',
+    description: 'Summarize the length of your text.',
+    command:
+      'Summarize the following text. Keep the most relevant parts based on the key-words given.',
+    icon: faEdit,
+    categories: ['text'],
+    inputs: [
+      {
+        id: 'text-type',
+        label: 'Text Type',
+        placeholder: 'Select the type of your text.',
+        type: 'select',
+        options: textTypes,
+      },
+      {
+        id: 'text-tone',
+        label: 'Tone of text',
+        placeholder:
+          'Select the tone for the text (casual, informative, formal, etc.).',
+        type: 'select',
+        options: tonOfVoiceOptions,
+      },
+      {
+        id: 'key-words',
+        label: 'Key Words',
+        placeholder:
+          'Name the for you most relevant features and the key words that shouldn´t be missing in the summarized text.',
+        type: 'textarea',
+      },
+      {
+        id: 'text-target',
+        label: 'Add your text',
+        placeholder: 'Paste here the text you need to summarize.',
+        type: 'textarea',
+      },
+    ],
+  },
+  {
+    id: 'e4cd-5a8b-hi67-3j4k',
+    title: 'Enhance a text',
+    description: 'Enhance the length of your text.',
+    command: 'Enhance the length of your text.',
+    icon: faEdit,
+    categories: ['text'],
+    inputs: [
+      {
+        id: 'text-type',
+        label: 'Text Type',
+        placeholder: 'Select the type of your text.',
+        type: 'select',
+        options: textTypes,
+      },
+      {
+        id: 'text-topic',
+        label: 'Text topic',
+        placeholder: 'Specify the topic or theme of the text.',
+        type: 'text',
+      },
+      {
+        id: 'text-tone',
+        label: 'Tone of text',
+        placeholder:
+          'Select the tone for the text (casual, informative, formal, etc.).',
+        type: 'select',
+        options: tonOfVoiceOptions,
+      },
+    ],
+  },
   {
     id: 'b3fd-4a89-e567-1b2c',
     title: 'Email',
@@ -273,120 +397,6 @@ export const TEMPLATES: Template[] = [
     ],
   },
   {
-    id: '5e62-c18c-0011-5fa5',
-    title: 'Create a text',
-    description: 'Generate a text based on your instructions.',
-    command: 'Generate a text based on the following:',
-    icon: faEdit,
-    categories: ['text'],
-    inputs: [
-      {
-        id: 'text-type',
-        label: 'Text Type',
-        placeholder: 'Select the type of your text.',
-        type: 'select',
-        options: textTypes,
-      },
-      {
-        id: 'text-topic',
-        label: 'Text topic',
-        placeholder: 'Specify the topic or theme of the text.',
-        type: 'text',
-      },
-      {
-        id: 'text-tone',
-        label: 'Tone of text',
-        placeholder:
-          'Select the tone for the text (casual, informative, formal, etc.).',
-        type: 'select',
-        options: tonOfVoiceOptions,
-      },
-      {
-        id: 'paper-paragraphs',
-        label: 'Number of paragraphs',
-        placeholder: 'Enter the number of paragraphs your text should have.',
-        type: 'number',
-      },
-
-      {
-        id: 'paper-words',
-        label: 'Number of words',
-        placeholder: 'How many words should the abstract have in total.',
-        type: 'number',
-      },
-    ],
-  },
-  {
-    id: '3c49-af6a-ee00-3d83',
-    title: 'Summarize a text',
-    description: 'Summarize the length of your text.',
-    command:
-      'Summarize the following text. Keep the most relevant parts based on the key-words given.',
-    icon: faEdit,
-    categories: ['text'],
-    inputs: [
-      {
-        id: 'text-type',
-        label: 'Text Type',
-        placeholder: 'Select the type of your text.',
-        type: 'select',
-        options: textTypes,
-      },
-      {
-        id: 'text-tone',
-        label: 'Tone of text',
-        placeholder:
-          'Select the tone for the text (casual, informative, formal, etc.).',
-        type: 'select',
-        options: tonOfVoiceOptions,
-      },
-      {
-        id: 'key-words',
-        label: 'Key Words',
-        placeholder:
-          'Name the for you most relevant features and the key words that shouldn´t be missing in the summarized text.',
-        type: 'textarea',
-      },
-      {
-        id: 'text-target',
-        label: 'Add your text',
-        placeholder: 'Paste here the text you need to summarize.',
-        type: 'textarea',
-      },
-    ],
-  },
-  {
-    id: 'e4cd-5a8b-hi67-3j4k',
-    title: 'Enhance a text',
-    description: 'Enhance the length of your text.',
-    command: 'Enhance the length of your text.',
-    icon: faEdit,
-    categories: ['text'],
-    inputs: [
-      {
-        id: 'text-type',
-        label: 'Text Type',
-        placeholder: 'Select the type of your text.',
-        type: 'select',
-        options: textTypes,
-      },
-      {
-        id: 'text-topic',
-        label: 'Text topic',
-        placeholder: 'Specify the topic or theme of the text.',
-        type: 'text',
-      },
-      {
-        id: 'text-tone',
-        label: 'Tone of text',
-        placeholder:
-          'Select the tone for the text (casual, informative, formal, etc.).',
-        type: 'select',
-        options: tonOfVoiceOptions,
-      },
-    ],
-  },
-  {
     id: 'd7bc-9f4a-g345-4i2j',
     title: 'Website Text',
     description: 'Generate content for different sections of a website.',
@@ -400,13 +410,39 @@ export const TEMPLATES: Template[] = [
         placeholder:
           'Select the section of the website (home, about us, services/products, FAQs, contact, etc.).',
         type: 'select',
-        options: [
-          'Home Page Content',
-          'About Us',
-          'Services/Products',
-          'FAQs',
-          'Contact Page',
-        ],
+        options: websiteSections,
+      },
+      {
+        id: 'website-tone',
+        label: 'Tone of Website',
+        placeholder:
+          'Select the tone for the website content (professional, friendly, informative, etc.).',
+        type: 'select',
+        options: tonOfVoiceOptions,
+      },
+      {
+        id: 'website-elements',
+        label: 'Key Website Elements',
+        placeholder:
+          'Specify key elements that should be included in the content (keywords, features, etc.).',
+        type: 'textarea',
+      },
+    ],
+  },
+  {
+    id: '6f73-d29d-1100-6eb6',
+    title: 'Blog post',
+    description: 'Generate content for a blog post.',
+    command: 'Generate blog post content.',
+    icon: faGlobe,
+    categories: ['website'],
+    inputs: [
+      {
+        id: 'blog-post',
+        label: 'Blog post',
+        placeholder: 'Select the kind of blog post you need to generate.',
+        type: 'select',
+        options: blogTypes,
       },
       {
         id: 'website-tone',

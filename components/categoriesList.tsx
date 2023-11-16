@@ -9,10 +9,10 @@ interface Category {
 
 const categoriesData = [
   { id: 'all', label: 'All' },
+  { id: 'text', label: 'Text editing' },
   { id: 'email', label: 'Email' },
   { id: 'science', label: 'Science papers' },
   { id: 'marketing', label: 'Marketing' },
-  { id: 'text', label: 'Text editing' },
   { id: 'website', label: 'Website' },
 ]
 
