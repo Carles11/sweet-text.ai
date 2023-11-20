@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import React from 'react'
 
 const Imprint = () => {
@@ -11,8 +12,8 @@ const Imprint = () => {
           </h2>
           <p className="pb-4">
             At sweet-text.ai, we believe in building strong relationships with
-            our visitors based on trust and transparency. That's why we want to
-            introduce ourselves and provide you with all the necessary
+            our visitors based on trust and transparency. That&apos;s why we
+            want to introduce ourselves and provide you with all the necessary
             information about
             <Link href="https://www.crix.design">our company</Link>.
           </p>
@@ -28,8 +29,8 @@ const Imprint = () => {
             Main, 60329, Hessen.
           </p>
           <p className="pb-4">
-            If you have any questions or need assistance, please don't hesitate
-            to contact us. You can reach us by Whatsapp at&nbsp;
+            If you have any questions or need assistance, please don&apos;t
+            hesitate to contact us. You can reach us by Whatsapp at&nbsp;
             <Link href="https://wa.me/56921881214">+56921881214</Link>
             &nbsp;or via email at
             <Link href="mailto:carles@crix.design"> carles@crix.design</Link>.
@@ -40,12 +41,12 @@ const Imprint = () => {
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4 mt-8">
-          <img
+          <Image
             className="w-full rounded-lg"
             src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
             alt="office content 1"
           />
-          <img
+          <Image
             className="mt-4 w-full lg:mt-10 rounded-lg"
             src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
             alt="office content 2"
