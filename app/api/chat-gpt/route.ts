@@ -40,18 +40,16 @@ export async function POST(request: Request) {
     const updatedMainGoal = generateCommand(template)
     // const mainGoal = template.command
     // explicitly ask for only one prompt instead of three for some categories
-    const onePromptCategories = ['science', 'text', 'website']
-    const promptCategories = onePromptCategories.every((value) => {
-      return template.categories.includes(value)
-    })
+    // const onePromptCategories = ['science', 'text', 'website']
+    // const promptCategories = onePromptCategories.every((value) => {
+    //   return template.categories.includes(value)
+    // })
 
     const messages = [
       { role: 'system', content: 'You are a helpful assistant.' },
       {
         role: 'user',
-        content: `Your task is: "${updatedMainGoal}".\n\nHere are the details:\n${instruction}. ${
-          !promptCategories && ' Please suggest 3 outputs. Number them 1,2,3'
-        }`,
+        content: `Your task is: "${updatedMainGoal}".\n\nHere are the details:\n${instruction}.`,
       },
     ]
 
