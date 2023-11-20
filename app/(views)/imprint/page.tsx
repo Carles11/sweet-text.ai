@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Imprint = () => {
@@ -12,11 +13,12 @@ const Imprint = () => {
             At sweet-text.ai, we believe in building strong relationships with
             our visitors based on trust and transparency. That's why we want to
             introduce ourselves and provide you with all the necessary
-            information about our company.
+            information about
+            <Link href="https://www.crix.design">our company</Link>.
           </p>
           <p className="pb-4">
             My name is Carles del Río Francés, and I am excited to be the
-            driving force behind this website. As a passionate professional, I
+            driving force behind this project. As a passionate professional, I
             am committed to delivering the highest level of service to our
             valued visitors.
           </p>
@@ -27,12 +29,10 @@ const Imprint = () => {
           </p>
           <p className="pb-4">
             If you have any questions or need assistance, please don't hesitate
-            to contact us. You can reach us by phone at{' '}
-            <span className="font-bold">+491782871785</span> or via email at{' '}
-            <a href="mailto:carles@crix.design" className="text-blue-500">
-              carles@crix.design
-            </a>
-            .
+            to contact us. You can reach us by Whatsapp at&nbsp;
+            <Link href="https://wa.me/56921881214">+56921881214</Link>
+            &nbsp;or via email at
+            <Link href="mailto:carles@crix.design"> carles@crix.design</Link>.
           </p>
           <p className="pb-4">
             Thank you for choosing our website. We appreciate your trust and
