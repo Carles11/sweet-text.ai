@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Github from './gitHub'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faTimes, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 export interface SidebarItem {
   label: string
@@ -40,7 +40,7 @@ const Sidebar: React.FC<Props> = ({ items, onShowPopup }) => {
         onClick={toggleSidebar}
       >
         <FontAwesomeIcon
-          icon={isOpen ? faTimes : faBars}
+          icon={isOpen ? faTimes : faCaretDown}
           style={{ fontSize: 30, color: 'silver' }}
         />
       </button>

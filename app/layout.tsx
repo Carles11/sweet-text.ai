@@ -101,7 +101,7 @@ const RootLayout = ({
       </Head>
 
       <body>
-        <div className="min-h-screen relative w-full md:flex md:flex-row">
+        <div className="min-h-screen relative w-full md:flex md:flex-row mt-16 md:mt-0">
           <div className="md:hidden z-10 fixed left-0 top-0 h-full">
             <Sidebar onShowPopup={handlePopup} items={SIDEBAR_ITEMS} />
           </div>
