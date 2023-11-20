@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Footer = () => {
@@ -6,18 +7,19 @@ const Footer = () => {
       <div className="w-full bg-gray-100 border-t dark:border-gray-900 py-4 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="justify-center flex-1 max-w-6xl px-4 py-2 mx-auto lg:py-0">
-            <div className="flex flex-wrap py-4 -mx-3">
+            <div className="flex py-4 -mx-3">
               <div className="w-full px-4 mb-7 md:w-1/2 lg:w-4/12 lg:mb-0">
                 <a
                   href="#"
                   className="inline-block pb-2 text-lg font-bold dark:text-gray-400"
                 >
-                  About Company
+                  About
                 </a>
                 <div className="w-16 mb-4 border-b-2 border-blue-600 dark:border-gray-600"></div>
                 <p className="text-base font-normal leading-6 lg:w-64 dark:text-gray-400">
-                  Lorem ipsum dor amet Lorem ipsum dor amet Lorem ipsum dor amet
-                  Lorem ipsum dor ame{' '}
+                  Created by Carles del Río, coding enthusiast inspired by&nbsp;
+                  <Link href="https://www.jemail.ai">jemai.ai</Link>. Committed
+                  to open-source, delivering a 100% free app.
                 </p>
               </div>
               <div className="w-full px-4 md:w-1/4 lg:w-2/12 mb-7 lg:mb-0">
@@ -27,32 +29,14 @@ const Footer = () => {
                 <div className="w-16 mb-4 border-b-2 border-blue-600 dark:border-gray-600"></div>
                 <ul>
                   <li className="mb-4">
-                    <a
-                      href="#"
-                      className="inline-block text-base font-normal dark:text-gray-400"
-                    >
-                      Home
-                    </a>
+                    <Link href="/about-us">Home</Link>
                   </li>
                   <li className="mb-4">
-                    <a
-                      href="/about-us"
-                      className="inline-block text-base font-normal dark:text-gray-400"
-                    >
-                      About Us
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a
-                      href="/"
-                      className="inline-block text-base font-normal dark:text-gray-400"
-                    >
-                      Templates
-                    </a>
+                    <Link href="/">About Us</Link>
                   </li>
                 </ul>
               </div>
-              <div className="w-full px-4 mb-7 lg:mb-0 md:w-1/4 lg:w-2/12">
+              {/* <div className="w-full px-4 mb-7 lg:mb-0 md:w-1/4 lg:w-2/12">
                 <h2 className="pb-2 text-lg font-bold text-gray-800 dark:text-gray-400">
                   Features{' '}
                 </h2>
@@ -83,7 +67,7 @@ const Footer = () => {
                     </a>
                   </li>
                 </ul>
-              </div>
+              </div> */}
               <div className="w-full px-4 mb-2 lg:mb-0 md:w-1/3 lg:w-4/12">
                 <h2 className="pb-2 text-lg font-bold text-gray-800 dark:text-gray-400">
                   Contact Info
