@@ -44,6 +44,7 @@ export type Template = {
 ]
 
 const tonOfVoiceOptions = [
+  'Neutral, natural tone',
   'Friendly and Professional',
   'Conversational and Trustworthy',
   'Informative and Persuasive',
@@ -75,9 +76,16 @@ const blogTypes = ['Technology', 'Health', 'Travel', 'Lifestyle', 'Finance']
 const websiteSections = [
   'Home Page Content',
   'About Us',
-  'Services/Products',
-  'FAQs',
-  'Contact Page',
+  'Services',
+  'Features',
+  'Portfolio',
+  'Testimonials',
+  'Team',
+  'Blog',
+  'Contact',
+  'Privacy policy',
+  'Imprint',
+  'Footer',
 ]
 
 export const TEMPLATES: Template[] = [

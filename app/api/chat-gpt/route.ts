@@ -21,11 +21,11 @@ const createInstruction = (
     .join('\n')
 }
 
-const generateCommand = (template: Template) => {
+const generateCommand = (template: Template): string | undefined => {
   const bestCommand = sweetPrompts.find(
     (comm) => comm.template === template.title
   )
-  return bestCommand
+  return bestCommand?.content
 }
 
 export async function POST(request: Request) {
@@ -40,7 +40,7 @@ export async function POST(request: Request) {
     const updatedMainGoal = generateCommand(template)
     // const mainGoal = template.command
     // explicitly ask for only one prompt instead of three for some categories
-    const onePromptCategories = ['science', 'text']
+    const onePromptCategories = ['science', 'text', 'website']
     const promptCategories = onePromptCategories.every((value) => {
       return template.categories.includes(value)
     })

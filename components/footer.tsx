@@ -9,12 +9,9 @@ const Footer = () => {
           <div className="justify-center flex-1 max-w-6xl px-4 py-2 mx-auto lg:py-0">
             <div className="flex py-4 -mx-3">
               <div className="w-full px-4 mb-7 md:w-1/2 lg:w-4/12 lg:mb-0">
-                <a
-                  href="#"
-                  className="inline-block pb-2 text-lg font-bold dark:text-gray-400"
-                >
+                <h2 className="pb-2 text-lg font-bold text-gray-800 dark:text-gray-400 ">
                   About
-                </a>
+                </h2>
                 <div className="w-16 mb-4 border-b-2 border-blue-600 dark:border-gray-600"></div>
                 <p className="text-base font-normal leading-6 lg:w-64 dark:text-gray-400">
                   Created by Carles del Río, coding enthusiast inspired by&nbsp;
@@ -29,10 +26,13 @@ const Footer = () => {
                 <div className="w-16 mb-4 border-b-2 border-blue-600 dark:border-gray-600"></div>
                 <ul>
                   <li className="mb-4">
-                    <Link href="/about-us">Home</Link>
+                    <Link href="/">Home</Link>
                   </li>
                   <li className="mb-4">
-                    <Link href="/">About Us</Link>
+                    <Link href="/about-us">About Us</Link>
+                  </li>
+                  <li className="mb-4">
+                    <Link href="/imprint">Imprint</Link>
                   </li>
                 </ul>
               </div>
@@ -100,9 +100,9 @@ const Footer = () => {
                   >
                     <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"></path>
                   </svg>
-                  <span className="text-gray-800 dark:text-gray-400">
-                    carles@crix.design
-                  </span>
+                  <div className="break-all">
+                    <a href="mailto:carles@crix.design">carles@crix.design</a>
+                  </div>
                 </p>
                 <p className="flex items-center mb-4">
                   <svg
