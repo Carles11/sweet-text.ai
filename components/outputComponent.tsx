@@ -6,11 +6,13 @@ import Toast from './toast'
 interface OutputComponentProps {
   generatedOutput: string
   onClearOutput: () => void
+  elapsedTime: Number
 }
 
 const OutputComponent: React.FC<OutputComponentProps> = ({
   generatedOutput,
   onClearOutput,
+  elapsedTime,
 }) => {
   const [toastVisible, setToastVisible] = useState(false)
 
@@ -51,19 +53,23 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
 
   const outputs = splitOutput(generatedOutput)
   const outputsNumber = outputs[0] === '' ? 0 : outputs.length
+
   return (
     <div className="w-full lg:w-2/3 xl:w-1/2 mx-auto">
       <div className="sticky top-0 flex items-center justify-between bg-white border-b border-gray-200 p-4">
         <div className="flex items-center">
-          <button className="bg-blue-700 text-white px-4 py-2 rounded-full">
+          <div className="bg-blue-700 text-white px-4 py-2 rounded-full">
             Total outputs
             <span className="ml-2 bg-white text-blue-700 px-2 py-1 rounded-full">
               {outputsNumber}
             </span>
-          </button>
+          </div>
           {/* ... other buttons, if needed */}
         </div>
-        <div>
+        <div className="flex gap-2">
+          <div className="bg-blue-400 text-white px-4 py-2 rounded-full">
+            ELAPS: {elapsedTime.toFixed(2)} sec.
+          </div>
           <button
             onClick={onClearOutput}
             className="bg-gray-200 text-gray-700 px-4 py-2 rounded-full"
@@ -81,9 +87,6 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
                 key={index}
                 className="py-4 px-4 border-b border-gray-200 group cursor-pointer bg-green-50 hover:bg-green-300/5"
               >
-                <div className="flex items-center space-x-2">
-                  {/* Your action buttons */}
-                </div>
                 <div
                   className="w-full mt-2 mb-3 text-base font-medium leading-7 text-gray-800 whitespace-pre-wrap pre"
                   onClick={() => copyTextToClipboard(answer)}

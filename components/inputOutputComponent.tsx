@@ -10,6 +10,7 @@ import { Template } from 'constants/templates'
 // @ts-ignore
 const InputOutputComponent = ({ template }) => {
   const [output, setOutput] = useState('')
+  const [elapsedTime, setElapsedTime] = useState(Number)
   const [isLoading, setIsLoading] = useState(false)
 
   const handleClearOutput = () => {
@@ -34,8 +35,8 @@ const InputOutputComponent = ({ template }) => {
 
     const { reply } = await result.json()
     let time2 = performance.now()
-    let elapsedTime = time2 - time1
-    console.log({ elapsedTime })
+    let elapsedTime = (time2 - time1) / 1000
+    setElapsedTime(elapsedTime)
     setOutput(reply || '')
     setIsLoading(false)
   }
@@ -53,6 +54,7 @@ const InputOutputComponent = ({ template }) => {
         <OutputComponent
           onClearOutput={handleClearOutput}
           generatedOutput={output}
+          elapsedTime={elapsedTime}
         />
       )}
     </div>
