@@ -14,7 +14,7 @@ const Contact = () => {
   }
 
   return (
-    <section className="flex items-center bg-stone-100 lg:h-screen font-poppins dark:bg-gray-800 ">
+    <section className="flex items-center bg-stone-100 lg:h-screen dark:bg-gray-800 ">
       <div className="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto lg:py-11 md:px-6">
         <div className="mb-10 text-left">
           <h2 className="pb-2 mb-2 text-xl font-bold text-gray-800 md:text-3xl dark:text-gray-300">

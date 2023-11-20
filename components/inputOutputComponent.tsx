@@ -20,7 +20,7 @@ const InputOutputComponent = ({ template }) => {
     template: Template,
     inputsData: { [key: string]: string }
   ) => {
-    console.log({ template, inputsData })
+    let time1 = performance.now()
     const result: any = await fetch('/api/chat-gpt', {
       method: 'POST',
       headers: {
@@ -31,7 +31,11 @@ const InputOutputComponent = ({ template }) => {
         inputsData,
       }),
     })
+
     const { reply } = await result.json()
+    let time2 = performance.now()
+    let elapsedTime = time2 - time1
+    console.log({ elapsedTime })
     setOutput(reply || '')
     setIsLoading(false)
   }

@@ -17,7 +17,8 @@ const AboutUs = () => {
               </div>
               <p className="px-4 mb-10 text-base leading-7 text-gray-500 dark:text-gray-400">
                 My name is Carles del Río, I have been coding for 5 years now
-                and I created this app fo fun. Here are some data about the app.
+                and I am a true open-source believer. Here are some data about
+                this 100% free app.
               </p>
               <div className="flex flex-wrap items-center">
                 <div className="w-full px-4 mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">

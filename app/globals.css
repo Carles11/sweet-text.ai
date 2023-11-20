@@ -4,15 +4,15 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 17, 24, 39;
+  --background-end-rgb: 17, 24, 39;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 17, 24, 39;
+    --background-end-rgb: 17, 24, 39;
   }
 }
 
@@ -46,7 +46,7 @@ body {
 
 /* H1 text color */
 .text-heading {
-  color: #000000;
+  color: #010101;
 }
 
 /* H2 - H6 text color */
@@ -77,4 +77,85 @@ a.inactive {
 
 body {
   @apply bg-primary;
+}
+
+@font-face {
+  font-family: 'Champagne&Limousines';
+  src: url('../public/fonts/champagne---limousines/Champagne & Limousines.ttf');
+  src: url('../public/fonts/champagne---limousines/Champagne & Limousines Bold.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MarkPro';
+  src: url('../public/fonts/mark-pro/Mark Pro/Mark Pro.ttf');
+  src: url('../public/fonts/mark-pro/Mark Pro Bold/Mark Pro Bold.ttf');
+  src: url('../public/fonts/mark-pro/Mark Pro Medium/Mark Pro Medium.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Champagne&Limousines';
+}
+
+h1 {
+  font-size: 250%; /* 45px */
+}
+
+h2 {
+  font-size: 200%; /* 36px */
+}
+
+h3 {
+  font-size: 177.78%; /* 32px */
+  color: #79d97c;
+}
+
+h4 {
+  font-size: 162.5%; /* 26px */
+}
+
+h5 {
+  font-size: 122%; /* 22px */
+}
+
+h6 {
+  font-size: 100%; /* 18px */
+}
+
+p {
+  font-family: 'MarkPro';
+}
+
+button {
+  font-family: 'MarkPro';
+}
+
+a.link-with-style {
+  background: linear-gradient(
+      to right,
+      rgba(100, 200, 200, 1),
+      rgba(100, 200, 200, 1)
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+    );
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+  padding: 1px;
+}
+
+a:hover.link-with-style {
+  background-size: 0 3px, 100% 3px;
 }

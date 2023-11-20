@@ -16,14 +16,14 @@ const HomePage: React.FC = () => {
       </h1>
       <h2 className="text-2xl font-light mt-5 ml-10">
         Create amazing{' '}
-        <strong className="text-blue-600">
+        <strong>
           texts, presentation intros, academic papers, research articles,
           summaries or lengthening texts, marketing copy,
         </strong>{' '}
-        or pretty much whatever comes to your mind as text. With the ChatGPT
-        engine.
+        or pretty much whatever comes to your mind as text. All powered by
+        ChatGPT and the best promps on the web.
       </h2>
-      <CardGrid cards={TEMPLATES} />
+      <CardGrid TEMPLATES={TEMPLATES} />
     </div>
   )
 }

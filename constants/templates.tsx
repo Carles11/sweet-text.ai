@@ -116,7 +116,6 @@ export const TEMPLATES: Template[] = [
         placeholder: 'Enter the number of paragraphs your text should have.',
         type: 'number',
       },
-
       {
         id: 'paper-words',
         label: 'Number of words',
@@ -197,7 +196,7 @@ export const TEMPLATES: Template[] = [
   },
   {
     id: 'b3fd-4a89-e567-1b2c',
-    title: 'Email',
+    title: 'Write an e-mail',
     description: 'Generate various types of email content.',
     command: 'Generate email content.',
     icon: faEnvelope,
@@ -269,7 +268,7 @@ export const TEMPLATES: Template[] = [
   },
   {
     id: '2b36-9e4f-dd99-2f72',
-    title: 'Paper Introduction',
+    title: 'Paper introduction',
     description: 'Create a compelling introduction for a scientific paper.',
     command: 'Create a compelling introduction for a scientific paper.',
     icon: faFileLines,
@@ -398,7 +397,7 @@ export const TEMPLATES: Template[] = [
   },
   {
     id: 'd7bc-9f4a-g345-4i2j',
-    title: 'Website Text',
+    title: 'Website text',
     description: 'Generate content for different sections of a website.',
     command: 'Generate website content.',
     icon: faGlobe,

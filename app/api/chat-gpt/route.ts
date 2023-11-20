@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import OpenAI from 'openai'
 import { Template, TemplateInput } from 'constants/templates'
+import { sweetPrompts } from 'constants/prompts'
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -19,6 +20,14 @@ const createInstruction = (
     .map((input) => `${input.label}: ${inputsData[input.id]}`)
     .join('\n')
 }
+
+const generateCommand = (template: Template) => {
+  const bestCommand = sweetPrompts.find(
+    (comm) => comm.template === template.title
+  )
+  return bestCommand
+}
+
 export async function POST(request: Request) {
   const body = await request.json()
   if (request.method === 'POST') {
@@ -28,13 +37,21 @@ export async function POST(request: Request) {
     }
 
     const instruction = createInstruction(template.inputs, inputsData)
-    const mainGoal = template.command
+    const updatedMainGoal = generateCommand(template)
+    // const mainGoal = template.command
+    // explicitly ask for only one prompt instead of three for some categories
+    const onePromptCategories = ['science', 'text']
+    const promptCategories = onePromptCategories.every((value) => {
+      return template.categories.includes(value)
+    })
 
     const messages = [
       { role: 'system', content: 'You are a helpful assistant.' },
       {
         role: 'user',
-        content: `Your task is: "${mainGoal}".\n\nHere are the details:\n${instruction}.`,
+        content: `Your task is: "${updatedMainGoal}".\n\nHere are the details:\n${instruction}. ${
+          !promptCategories && ' Please suggest 3 outputs. Number them 1,2,3'
+        }`,
       },
     ]
 
@@ -50,6 +67,7 @@ export async function POST(request: Request) {
         temperature: 0.5,
       })
       const reply = response?.choices[0].message.content
+      console.log({ reply })
       return NextResponse.json({ reply })
     } catch (error) {
       if (error instanceof OpenAI.APIError) {

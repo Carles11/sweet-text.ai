@@ -49,6 +49,12 @@ const InputComponent: React.FC<InputComponentProps> = ({
         title={template.title}
         description={template.description}
       />
+      <div className="flex justify-end p-8">
+        <Link href={'/'} className="link-with-style">
+          Go back
+        </Link>
+      </div>
+
       <div className="flex flex-col p-4 flex-grow">
         {template.inputs.map(
           (input: {
@@ -80,7 +86,6 @@ const InputComponent: React.FC<InputComponentProps> = ({
         >
           Clear inputs
         </button>
-        <Link href={'/'}>Go back</Link>
         <button
           onClick={() => {
             setIsLoading(true)

@@ -14,10 +14,11 @@ const Card: React.FC<CardProps> = ({ icon, title, description, id }) => {
   return (
     <Link key={id} href={`/templates/${id}`}>
       <div
-        style={{ minHeight: '300px' }}
+        style={{ minHeight: '300px', maxWidth: '300px' }}
         className="relative p-6 transition-all h-full focus:ring-gray-400 focus:shadow-xl duration-150 rounded-2xl shadow-sm hover:shadow-lg hover:ring-gray-300 hover:ring-2 ring-1 ring-gray-200 group flex flex-col bg-white"
       >
-        <div className="absolute top-4 right-4 hidden group-hover:block">
+        {/* THIS SHOWS A STAR ON HOVERING OVER THE CARD
+         <div className="absolute top-4 right-4 hidden group-hover:block">
           <button className="p-2 transition duration-150 rounded-md hover:text-yellow-400 text-gray-200 hover:bg-gray-200/50">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +36,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, id }) => {
               ></path>
             </svg>
           </button>
-        </div>
+        </div> */}
         <div className="flex items-center justify-center w-16 h-16 text-2xl rounded-full text-gray-600 mb-6 bg-gray-100/75">
           <FontAwesomeIcon
             icon={icon}
