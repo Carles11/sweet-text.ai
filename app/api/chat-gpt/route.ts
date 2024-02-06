@@ -44,12 +44,20 @@ export async function POST(request: Request) {
     // const promptCategories = onePromptCategories.every((value) => {
     //   return template.categories.includes(value)
     // })
+    const moreSpecificGoals =
+      'The task is delimited by triple quotes. Just for reference and fine tuning use the instruction, which is in delimited by double quotes.'
+
+    const makeItShort =
+      'Unless specifically expressed in the task, keep it brief. Do not use more paragraphs than necessary.'
+
+    const numberOutputs =
+      'If you show more that one output, numerate them in a list.'
 
     const messages = [
       { role: 'system', content: 'You are a helpful assistant.' },
       {
         role: 'user',
-        content: `Your task is: "${updatedMainGoal}".\n\nHere are the details:\n${instruction}.`,
+        content: `${numberOutputs} ${makeItShort} ${moreSpecificGoals}. Your task is: """${updatedMainGoal}""".\n\nHere are the details:\n""${instruction}"".`,
       },
     ]
 

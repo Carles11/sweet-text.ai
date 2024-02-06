@@ -8,8 +8,8 @@ const OutputLoader = () => {
         Give chat-gpt a little time. You´ll very soon see its answers here.
       </p>
       <p className="font-normal text-gray-700 dark:text-gray-400">
-        Once you see the output, just click on the one you like to copy it to
-        your clipboard.{' '}
+        Once you see the output, just click on the output to copy it to your
+        clipboard.{' '}
       </p>
       <div
         role="status"
