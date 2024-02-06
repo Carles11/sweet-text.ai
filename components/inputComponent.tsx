@@ -23,6 +23,7 @@ const InputComponent: React.FC<InputComponentProps> = ({
   isLoading,
 }) => {
   const [inputsData, setInputsData] = useState<{ [key: string]: string }>({})
+
   const handleInputChange = (e: any) => {
     setInputsData({ ...inputsData, [e.target.id]: e.target.value })
   }

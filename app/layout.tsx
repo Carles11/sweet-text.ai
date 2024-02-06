@@ -2,6 +2,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 import { SIDEBAR_ITEMS } from 'constants/menuItems'
 import GoProPopup from 'components/goProPopup'
@@ -112,6 +113,7 @@ const RootLayout = ({
           {showPopup && <GoProPopup onClose={() => setShowPopup(false)} />}
         </div>
         <Footer />
+        <Analytics />
       </body>
       {/* <NextScript /> */}
     </html>

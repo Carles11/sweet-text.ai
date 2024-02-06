@@ -7,7 +7,7 @@ export const sweetPrompts = [
   {
     template: 'Travel guide',
     content:
-      'I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. A typical request would be "I am in Istanbul/Beyoğlu and I want to visit only museums."',
+      'I want you to act as an experienced travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. A typical request would be "I am in Istanbul/Beyoğlu and I want to visit only museums."',
   },
   {
     template: 'Create a text',
@@ -32,7 +32,7 @@ export const sweetPrompts = [
   {
     template: 'Email Subject Lines',
     content:
-      'Formulate compelling email subject lines with creativity and precision, considering the specified tone and topic. Craft concise and attention-grabbing phrases that entice recipients to open and engage with the email content. Aim for a balance of intrigue and clarity, ensuring the subject lines effectively communicate the essence of the message while sparking curiosity.',
+      'Formulate 3 compelling email subject lines with creativity and precision, considering the specified tone and topic. Show your outputs in a numbered list. Craft concise and attention-grabbing phrases that entice recipients to open and engage with the email content. Aim for a balance of intrigue and clarity, ensuring the subject lines effectively communicate the essence of the message while sparking curiosity.',
   },
   {
     template: 'Paper introduction',

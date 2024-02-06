@@ -73,7 +73,7 @@ const Footer = () => {
                   Contact Info
                 </h2>
                 <div className="w-16 mb-4 border-b-2 border-blue-600 dark:border-gray-600"></div>
-                <p className="flex items-center mb-4">
+                <div className="flex items-center mb-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -88,8 +88,8 @@ const Footer = () => {
                   <span className="text-gray-800 dark:text-gray-400">
                     Santiago de Chile, Chile
                   </span>
-                </p>
-                <p className="flex items-center mb-4 ">
+                </div>
+                <div className="flex items-center mb-4 ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -103,8 +103,8 @@ const Footer = () => {
                   <div className="break-all">
                     <a href="mailto:carles@crix.design">carles@crix.design</a>
                   </div>
-                </p>
-                <p className="flex items-center mb-4">
+                </div>
+                <div className="flex items-center mb-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -118,7 +118,7 @@ const Footer = () => {
                   <span className="text-gray-800 dark:text-gray-400">
                     +56-921881214
                   </span>
-                </p>
+                </div>
               </div>
             </div>
           </div>
