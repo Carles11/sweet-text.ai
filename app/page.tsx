@@ -1,7 +1,7 @@
 import CardGrid from 'components/cardGridWrapper'
 import { TEMPLATES } from 'constants/templates'
 // import Font Awesome CSS
-// import '@fortawesome/fontawesome-svg-core/styles.css'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 // import { config } from '@fortawesome/fontawesome-svg-core'
 // // Tell Font Awesome to skip adding the CSS automatically
