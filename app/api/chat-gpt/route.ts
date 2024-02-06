@@ -70,7 +70,7 @@ export async function POST(request: Request) {
         model: 'gpt-3.5-turbo',
         // @ts-ignore
         messages: messages,
-        temperature: 0.5,
+        temperature: 0.7,
       })
       const reply = response?.choices[0].message.content
       console.log({ reply })

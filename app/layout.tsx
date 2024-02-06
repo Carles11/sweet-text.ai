@@ -3,6 +3,7 @@
 
 import React, { useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import { SIDEBAR_ITEMS } from 'constants/menuItems'
 import GoProPopup from 'components/goProPopup'
@@ -113,6 +114,7 @@ const RootLayout = ({
           {showPopup && <GoProPopup onClose={() => setShowPopup(false)} />}
         </div>
         <Footer />
+        <SpeedInsights />
         <Analytics />
       </body>
       {/* <NextScript /> */}
